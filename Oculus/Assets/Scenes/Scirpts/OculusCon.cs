@@ -51,5 +51,36 @@ public class OculusCon : MonoBehaviour
             logText.text = pos.ToString();
         }
 
+        //A버튼 (오른손)
+
+        if (OVRInput.GetDown(OVRInput.Button.One))
+        {
+            logText.text = "A버튼";
+        }
+
+        //B버튼 (오른손)
+        if (OVRInput.GetDown(OVRInput.Button.Two))
+        {
+            logText.text = "B버튼";
+        }
+
+        //X버튼 (왼손)
+        if (OVRInput.GetDown(OVRInput.Button.Three))
+        {
+            logText.text = "X버튼";
+        }
+
+        //Y버튼 (왼손)
+        if (OVRInput.GetDown(OVRInput.Button.Four))
+        {
+            logText.text = "Y버튼";
+        }
+
+        //스타트 버튼 (왼손)
+
+        if (OVRInput.GetDown(OVRInput.Button.Start))
+        {
+            logText.text = "스타트 버튼";
+        }
     }
 }
