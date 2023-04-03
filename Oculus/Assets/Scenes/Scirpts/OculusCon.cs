@@ -11,6 +11,9 @@ public class OculusCon : MonoBehaviour
 
     public Text logText; //출력 메시지
 
+    public GameObject hitL;
+    public GameObject hitR;
+
 
     // Start is called before the first frame update
     void Start()
@@ -24,10 +27,35 @@ public class OculusCon : MonoBehaviour
         if(OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
         {
             logText.text = ("왼손 트리거");
+
+            if (hitL)
+            {
+                if (hitL.GetComponent<Chest>())
+                {
+                    hitL.GetComponent<Chest>().ChestAnimUpdate();
+                }
+            }
+
+            /*switch(hitL.transform.name)
+            {
+                case "Treasure_Chest":
+                    {
+                        hitL.GetComponent<Chest>().ChestAnimUpdate();
+                        break;
+                    }
+            }*/
         }
         if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))
         {
             logText.text = ("오른손 트리거");
+
+            if (hitR)
+            {
+                if (hitR.GetComponent<Chest>())
+                {
+                    hitR.GetComponent<Chest>().ChestAnimUpdate();
+                }
+            }
         }
         if (OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger))
         {
