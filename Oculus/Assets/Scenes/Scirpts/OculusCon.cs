@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 
 public class OculusCon : MonoBehaviour
@@ -24,11 +25,31 @@ public class OculusCon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.K))
+        {
+            if (GameObject.FindGameObjectWithTag("Video"))
+            {
+                if (GameObject.FindGameObjectWithTag("Video").GetComponent<VideoPlayer>().isPlaying)
+                {
+                    GameObject.FindGameObjectWithTag("Video").GetComponent<VideoPlayer>().Pause();
+                }
+                else
+                {
+                    GameObject.FindGameObjectWithTag("Video").GetComponent<VideoPlayer>().Play();
+
+                }
+            }
+        }
+
+
+
+
         if(OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
         {
             logText.text = ("왼손 트리거");
 
-            if (hitL)
+
+            /*if (hitL)
             {
                 if (hitL.GetComponent<Chest>())
                 {
@@ -44,6 +65,8 @@ public class OculusCon : MonoBehaviour
                         break;
                     }
             }*/
+            //"Video"라는 태그를 가진 오브젝트가 있다면
+            
         }
         if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))
         {
@@ -109,6 +132,22 @@ public class OculusCon : MonoBehaviour
         if (OVRInput.GetDown(OVRInput.Button.Start))
         {
             logText.text = "스타트 버튼";
+        }
+    }
+
+    void VideoStateUpdate()
+    {
+        if (GameObject.FindGameObjectWithTag("Video"))
+        {
+            if (GameObject.FindGameObjectWithTag("Video").GetComponent<VideoPlayer>().isPlaying)
+            {
+                GameObject.FindGameObjectWithTag("Video").GetComponent<VideoPlayer>().Pause();
+            }
+            else
+            {
+                GameObject.FindGameObjectWithTag("Video").GetComponent<VideoPlayer>().Play();
+
+            }
         }
     }
 }
