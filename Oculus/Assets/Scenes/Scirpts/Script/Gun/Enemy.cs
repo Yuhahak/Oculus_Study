@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.tag == "BULLET")
+        if (collision.collider.tag == "Bullet")
         {
             Destroy(gameObject, 0.2f);
         }

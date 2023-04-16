@@ -29,7 +29,7 @@ public class BulletCreate : MonoBehaviour
     void CheckGun()
     {
 
-        if (Input.GetKeyDown(KeyCode.F) && ActionController.instance.heldItem && isGun)
+        if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger) && isGun)
         {
             Debug.Log("1");
             Rigidbody bulletRb =
@@ -42,7 +42,7 @@ public class BulletCreate : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "GrabR")
         {
             isGun = true;
         }
