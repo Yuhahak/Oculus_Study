@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rope : MonoBehaviour
+public class Key : MonoBehaviour
 {
-    GameObject key;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,12 +17,12 @@ public class Rope : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter(Collider other)
+
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.CompareTag("Bullet"))
+        if (collision.gameObject.CompareTag("Bullet"))
         {
-            key.GetComponent<Rigidbody>().isKinematic = false;
-            Destroy(gameObject);
+            gameObject.GetComponent<Rigidbody>().isKinematic = false;
         }
     }
 }
