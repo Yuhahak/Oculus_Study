@@ -15,6 +15,11 @@ public class OculusCon : MonoBehaviour
     public GameObject hitL;
     public GameObject hitR;
 
+    public OVRGrabber grabberL;
+    public OVRGrabber grabberR;
+
+    public GameObject grabL;
+    public GameObject grabR;
 
     // Start is called before the first frame update
     void Start()
@@ -25,29 +30,27 @@ public class OculusCon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.K))
+        if(grabberL.m_grabbedObj)
         {
-            if (GameObject.FindGameObjectWithTag("Video"))
-            {
-                if (GameObject.FindGameObjectWithTag("Video").GetComponent<VideoPlayer>().isPlaying)
-                {
-                    GameObject.FindGameObjectWithTag("Video").GetComponent<VideoPlayer>().Pause();
-                }
-                else
-                {
-                    GameObject.FindGameObjectWithTag("Video").GetComponent<VideoPlayer>().Play();
-
-                }
-            }
+            grabL = grabberL.m_grabbedObj.gameObject;
+        }
+        else
+        {
+            grabL = null;
+        }
+        if(grabberR.m_grabbedObj)
+        {
+            grabR = grabberR.m_grabbedObj.gameObject;
+        }
+        else
+        {
+            grabR = null;
         }
 
 
 
-
-        if(OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
+        if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
         {
-            logText.text = ("왼손 트리거");
-
 
             /*if (hitL)
             {
@@ -70,68 +73,63 @@ public class OculusCon : MonoBehaviour
         }
         if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))
         {
-            logText.text = ("오른손 트리거");
-
-            if (hitR)
+            Debug.Log("그랩R잡힘");
+            if (grabR)
             {
-                if (hitR.GetComponent<Chest>())
+                switch(grabR.transform.name)
                 {
-                    hitR.GetComponent<Chest>().ChestAnimUpdate();
+                    case "tttt":
+                        {
+                            grabR.GetComponent<BulletCreate>().CheckGun();
+                            Debug.Log("그랩R잡힘");
+                            break;
+                        }
                 }
             }
         }
         if (OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger))
         {
-            logText.text = ("왼손 트리거");
         }
 
         if (OVRInput.GetDown(OVRInput.Button.SecondaryHandTrigger))
         {
-            logText.text = ("오른손 트리거");
         }
 
         if (OVRInput.Get(OVRInput.Touch.PrimaryThumbstick))
         {
             Vector2 pos = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick);
-            logText.text = pos.ToString();
         }
 
         if (OVRInput.Get(OVRInput.Touch.SecondaryThumbstick))
         {
             Vector2 pos = OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick);
-            logText.text = pos.ToString();
         }
 
         //A버튼 (오른손)
 
         if (OVRInput.GetDown(OVRInput.Button.One))
         {
-            logText.text = "A버튼";
         }
 
         //B버튼 (오른손)
         if (OVRInput.GetDown(OVRInput.Button.Two))
         {
-            logText.text = "B버튼";
         }
 
         //X버튼 (왼손)
         if (OVRInput.GetDown(OVRInput.Button.Three))
         {
-            logText.text = "X버튼";
         }
 
         //Y버튼 (왼손)
         if (OVRInput.GetDown(OVRInput.Button.Four))
         {
-            logText.text = "Y버튼";
         }
 
         //스타트 버튼 (왼손)
 
         if (OVRInput.GetDown(OVRInput.Button.Start))
         {
-            logText.text = "스타트 버튼";
         }
     }
 
