@@ -52,23 +52,7 @@ public class OculusCon : MonoBehaviour
         if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
         {
 
-            /*if (hitL)
-            {
-                if (hitL.GetComponent<Chest>())
-                {
-                    hitL.GetComponent<Chest>().ChestAnimUpdate();
-                }
-            }
-
-            /*switch(hitL.transform.name)
-            {
-                case "Treasure_Chest":
-                    {
-                        hitL.GetComponent<Chest>().ChestAnimUpdate();
-                        break;
-                    }
-            }*/
-            //"Video"라는 태그를 가진 오브젝트가 있다면
+           
             
         }
         if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))

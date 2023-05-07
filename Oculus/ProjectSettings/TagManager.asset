@@ -9,6 +9,9 @@ TagManager:
   - Video
   - GrabR
   - Bullet
+  - Ball
+  - Key
+  - Key2
   layers:
   - Default
   - TransparentFX
