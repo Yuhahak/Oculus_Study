@@ -24,7 +24,7 @@ public class Key : MonoBehaviour
         if (collision.gameObject.CompareTag("Bullet"))
         {
             gameObject.GetComponent<Rigidbody>().isKinematic = false;
-            Debug.Log("!");
+            Debug.Log("BulletKey");
         }
     }
 

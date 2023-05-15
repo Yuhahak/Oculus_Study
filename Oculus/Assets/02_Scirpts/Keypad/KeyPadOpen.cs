@@ -3,13 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class KeyPadButton : MonoBehaviour
+public class KeyPadOpen : MonoBehaviour
 {
-    [SerializeField] private Text Ans; //입력받는 텍스트
+    [SerializeField] public Text Ans; //입력받는 텍스트
 
     private string Answer = "1234"; //답
 
+    public static KeyPadOpen instance;
 
+    private void Awake()
+    {
+        KeyPadOpen instance = this;
+    }
 
     private void Update()
     {
@@ -31,7 +36,7 @@ public class KeyPadButton : MonoBehaviour
 
     public void Execute() //확인 함수
     {
-        if(Ans.text == Answer) //입력받은 텍스트와 값이 같으면
+        if (Ans.text == Answer) //입력받은 텍스트와 값이 같으면
         {
             Ans.text = "딩동댕";
             Invoke("Clear", 1f);

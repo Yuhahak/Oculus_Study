@@ -20,7 +20,8 @@ public class BallBox : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ball"))
         {
-            Debug.Log("!");
+            InstanceManager.s.BallBox = true;
+            Debug.Log("BallBox");
         }
     }
 }
