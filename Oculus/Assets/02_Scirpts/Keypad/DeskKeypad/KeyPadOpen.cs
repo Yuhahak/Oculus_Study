@@ -7,6 +7,8 @@ public class KeyPadOpen : MonoBehaviour
 {
     [SerializeField] public Text Ans; //입력받는 텍스트
 
+    public GameObject Desk;
+
     private string Answer = "1234"; //답
 
     public static KeyPadOpen instance;
@@ -40,7 +42,7 @@ public class KeyPadOpen : MonoBehaviour
         {
             Ans.text = "딩동댕";
             Invoke("Clear", 1f);
-
+            Desk.gameObject.GetComponent<Animator>().SetTrigger("DeskOpen");
         }
         else
         {

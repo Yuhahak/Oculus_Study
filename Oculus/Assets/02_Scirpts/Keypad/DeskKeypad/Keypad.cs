@@ -30,9 +30,5 @@ public class Keypad : MonoBehaviour
                 KeyPad.SetActive(false);
             }
         }
-        else
-        {
-            KeyPad.SetActive(false);
-        }
     }
 }

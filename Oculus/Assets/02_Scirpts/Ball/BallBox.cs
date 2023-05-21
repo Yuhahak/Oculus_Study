@@ -16,11 +16,10 @@ public class BallBox : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.CompareTag("Ball"))
         {
-            InstanceManager.s.BallBox = true;
             Debug.Log("BallBox");
         }
     }
