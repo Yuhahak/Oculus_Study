@@ -23,6 +23,7 @@ public class ToyBoxOpen : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Key"))
         {
+            ToastManager.Instance.showMessage("Open ToyBox", 1f);
             ToyBoxOpenCheck = true;
             Debug.Log("BoxKeyCheck");
         }

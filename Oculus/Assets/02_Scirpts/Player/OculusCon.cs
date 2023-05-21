@@ -66,6 +66,11 @@ public class OculusCon : MonoBehaviour
                             grabR.GetComponent<BulletCreate>().CheckGun();
                             break;
                         }
+                    case "KeyPad_Col":
+                        {
+                            Keypad.s.KeyPad_Col_Open = true;
+                            break;
+                        }
                 }
             }
         }

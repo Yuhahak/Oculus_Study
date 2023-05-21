@@ -52,7 +52,7 @@ public class KeyPadOpen : MonoBehaviour
 
 
 
-    void Clear() //클리어 함수
+    public void Clear() //클리어 함수
     {
         Ans.text = ""; //입력받은 답 초기화
     }

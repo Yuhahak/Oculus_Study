@@ -4,14 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
   - Item
-  - Video
   - GrabR
   - Bullet
   - Ball
   - Key
   - Key2
+  - Ground
   layers:
   - Default
   - TransparentFX
