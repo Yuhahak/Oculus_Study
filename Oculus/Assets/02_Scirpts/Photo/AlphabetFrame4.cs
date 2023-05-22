@@ -2,20 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PhotoFrame : MonoBehaviour
+public class AlphabetFrame : MonoBehaviour
 {
     public string collidedObjectName;
 
-    public GameObject Photo1;
-    public GameObject PhotoFrame1;
+    public GameObject Alphabet;
+    public GameObject AlphabetFrame1;
 
     private void Update()
     {
         switch (collidedObjectName)
         {
-            case "Photo1":
-                Destroy(Photo1);
-                PhotoFrame1.gameObject.SetActive(true);
+            case "A":
+                Destroy(Alphabet);
+                AlphabetFrame1.gameObject.SetActive(true);
                 break;
         }
     }
