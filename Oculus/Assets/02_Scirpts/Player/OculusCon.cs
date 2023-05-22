@@ -18,6 +18,10 @@ public class OculusCon : MonoBehaviour
     public GameObject grabL;
     public GameObject grabR;
 
+    
+    [SerializeField] public Text Ans; //입력받는 텍스트
+    private string Answer = "1234"; //답
+
 
 
 
@@ -66,11 +70,20 @@ public class OculusCon : MonoBehaviour
                             grabR.GetComponent<BulletCreate>().CheckGun();
                             break;
                         }
+                    case "Game_Start":
+                        {
+                            UnityEngine.SceneManagement.SceneManager.LoadScene("Main_Scene");
+                            break;
+                        }
                     case "KeyPad_Col":
                         {
                             Keypad.s.KeyPad_Col_Open = true;
                             break;
                         }
+                    case "KeyPad_1":
+                        KeyPadOpen.instance.Ans.text += "1";
+                        break;
+
                 }
             }
         }

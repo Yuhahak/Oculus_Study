@@ -18,6 +18,10 @@ public class Keypad : MonoBehaviour
     private void Update()
     {
         KeyPadOpen();
+        if (KeyPad_Col_Open == false)
+        {
+            KeyPad.SetActive(false);
+        }
     }
 
     public void KeyPadOpen()
@@ -27,7 +31,7 @@ public class Keypad : MonoBehaviour
             KeyPad.SetActive(true);
             if (OVRInput.GetDown(OVRInput.Button.Three))
             {
-                KeyPad.SetActive(false);
+                KeyPad_Col_Open = false;
             }
         }
     }

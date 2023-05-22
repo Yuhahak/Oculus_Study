@@ -19,18 +19,23 @@ public class OculusLaser : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //이 스크립트 부착된 오브젝트에서 LineRenderer라는 컴포넌트를 찾아서 line에 연결한다.
+        line = GetComponent<LineRenderer>();
 
+        line.SetPosition(0, Vector3.zero); //라인의 시작점 설정 (시작점, 시작점의 위치)
+
+        line.SetPosition(1, transform.forward * maxDistance); //라인의 마지막 지점 설정 (시작점, 시작점의 위치)
     }
 
     // Update is called once per frame
     void Update()
     {
-        //이 스크립트 부착된 오브젝트에서 LineRenderer라는 컴포넌트를 찾아서 line에 연결한다.
-        line = GetComponent<LineRenderer>();
+        ////이 스크립트 부착된 오브젝트에서 LineRenderer라는 컴포넌트를 찾아서 line에 연결한다.
+        //line = GetComponent<LineRenderer>();
 
-        line.SetPosition(0, transform.position); //라인의 시작점 설정 (시작점, 시작점의 위치)
+        //line.SetPosition(0, transform.position); //라인의 시작점 설정 (시작점, 시작점의 위치)
 
-        line.SetPosition(1, transform.forward * maxDistance); //라인의 마지막 지점 설정 (시작점, 시작점의 위치)
+        //line.SetPosition(1, transform.forward * maxDistance); //라인의 마지막 지점 설정 (시작점, 시작점의 위치)
         //(0, 0, 1) * 30.0f = (0, 0, 30) -> 라인의 길이 지정
 
 
