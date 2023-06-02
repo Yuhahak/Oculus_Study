@@ -7,7 +7,7 @@ public class AlphabetFrame1 : MonoBehaviour
     public string collidedObjectName;
 
     public GameObject Alphabet;
-    public GameObject AlphabetFrame1;
+    public GameObject AlphabetFrame1_;
 
     private void Update()
     {
@@ -15,7 +15,7 @@ public class AlphabetFrame1 : MonoBehaviour
         {
             case "U":
                 Destroy(Alphabet);
-                AlphabetFrame1.gameObject.SetActive(true);
+                AlphabetFrame1_.gameObject.SetActive(true);
                 break;
         }
     }

@@ -25,7 +25,6 @@ public class ToyBoxOpen : MonoBehaviour
         {
             ToastManager.Instance.showMessage("Open ToyBox", 1f);
             ToyBoxOpenCheck = true;
-            Debug.Log("BoxKeyCheck");
         }
     }
 
@@ -35,7 +34,6 @@ public class ToyBoxOpen : MonoBehaviour
         {
             ToyBoxKey.GetComponent<Animator>().SetTrigger("ToyBoxKey");
             Invoke("BoxOpenAnim", 1f);
-            Debug.Log("ToyBoxOpen");
         }
     }
 

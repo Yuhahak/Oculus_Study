@@ -17,11 +17,11 @@ public class Keypad : MonoBehaviour
 
     private void Update()
     {
-        KeyPadOpen();
-        if (KeyPad_Col_Open == false)
-        {
-            KeyPad.SetActive(false);
-        }
+        //KeyPadOpen();
+        //if (KeyPad_Col_Open == false)
+        //{
+        //    KeyPad.SetActive(false);
+        //}
     }
 
     public void KeyPadOpen()

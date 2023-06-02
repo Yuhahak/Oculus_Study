@@ -16,6 +16,8 @@ public class Laser : MonoBehaviour
     [SerializeField]
     private float dist;
 
+    public Text text;
+
     Button buttonUI;
     // Start is called before the first frame update
     void Start()
@@ -31,6 +33,8 @@ public class Laser : MonoBehaviour
         line.transform.localPosition = new Vector3(line.transform.localPosition.x, line.transform.localPosition.y, line.transform.localPosition.z + line.transform.localScale.y);
         line.GetComponent<Renderer>().material = laserMat;
         line.GetComponent<CapsuleCollider>().enabled = false;
+        text.text = "";
+
     }
 
     // Update is called once per frame
@@ -57,6 +61,7 @@ public class Laser : MonoBehaviour
 
 
         check();
+        KeyPad();
     }
 
     void check()
@@ -72,6 +77,146 @@ public class Laser : MonoBehaviour
 
                     }
                     break;
+
+            }
+        }
+    }
+
+    void KeyPad()
+    {
+        if (hitObject != null)
+        {
+            switch (hitObject.name)
+            {
+                case "KeyPad1":
+                    if (OVRInput.GetDown(OVRInput.Button.One))
+                    {
+                        if (text.text.Length < 4)
+                        {
+                            text.text += 1.ToString();
+                        }
+
+                    }
+                    break;
+                case "KeyPad2":
+                    if (OVRInput.GetDown(OVRInput.Button.One))
+                    {
+                        if (text.text.Length < 4)
+                        {
+                            text.text += 2.ToString();
+                        }
+
+                    }
+                    break;
+                case "KeyPad3":
+                    if (OVRInput.GetDown(OVRInput.Button.One))
+                    {
+                        if (text.text.Length < 4)
+                        {
+                            text.text += 3.ToString();
+                        }
+
+                    }
+                    break;
+                case "KeyPad4":
+                    if (OVRInput.GetDown(OVRInput.Button.One))
+                    {
+                        if (text.text.Length < 4)
+                        {
+                            text.text += 4.ToString();
+                        }
+
+                    }
+                    break;
+                case "KeyPad5":
+                    if (OVRInput.GetDown(OVRInput.Button.One))
+                    {
+                        if (text.text.Length < 4)
+                        {
+                            text.text += 5.ToString();
+                        }
+
+                    }
+                    break;
+                case "KeyPad6":
+                    if (OVRInput.GetDown(OVRInput.Button.One))
+                    {
+                        if (text.text.Length < 4)
+                        {
+                            text.text += 6.ToString();
+                        }
+
+                    }
+                    break;
+                case "KeyPad7":
+                    if (OVRInput.GetDown(OVRInput.Button.One))
+                    {
+                        if (text.text.Length < 4)
+                        {
+                            text.text += 7.ToString();
+                        }
+
+                    }
+                    break;
+                case "KeyPad8":
+                    if (OVRInput.GetDown(OVRInput.Button.One))
+                    {
+                        if (text.text.Length < 4)
+                        {
+                            text.text += 8.ToString();
+                        }
+
+                    }
+                    break;
+                case "KeyPad9":
+                    if (OVRInput.GetDown(OVRInput.Button.One))
+                    {
+                        if (text.text.Length < 4)
+                        {
+                            text.text += 9.ToString();
+                        }
+
+                    }
+                    break;
+                case "KeyPad0":
+                    if (OVRInput.GetDown(OVRInput.Button.One))
+                    {
+                        if (text.text.Length < 4)
+                        {
+                            text.text += 0.ToString();
+                        }
+
+                    }
+                    break;
+                case "KeyPadOk":
+                    if (OVRInput.GetDown(OVRInput.Button.One))
+                    {
+                        if (text.text == "1234")
+                        {
+                            text.text = "";
+
+                            text.text += "Correct";
+                        }
+                        else
+                        {
+                            text.text = "";
+
+                            text.text += "Wrong";
+                        }
+
+                    }
+                    break;
+                case "KeyPadBack":
+                    if (OVRInput.GetDown(OVRInput.Button.One))
+                    {
+                        
+                        
+                            text.text = "" ;
+                        
+
+                    }
+                    break;
+
             }
         }
     }

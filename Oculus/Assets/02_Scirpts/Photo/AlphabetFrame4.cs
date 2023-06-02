@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AlphabetFrame : MonoBehaviour
+public class AlphabetFrame4 : MonoBehaviour
 {
     public string collidedObjectName;
 
