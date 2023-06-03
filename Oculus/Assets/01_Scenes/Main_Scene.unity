@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18366143, g: 0.22797269, b: 0.29838568, a: 1}
+  m_IndirectSpecularColor: {r: 0.18366112, g: 0.22797228, b: 0.298385, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7857,8 +7857,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collidedObjectName: 
-  Alphabet: {fileID: 0}
-  AlphabetFrame1: {fileID: 0}
+  J: {fileID: 0}
+  J_: {fileID: 0}
+  U: {fileID: 0}
+  U_: {fileID: 0}
+  L: {fileID: 0}
+  L_: {fileID: 0}
+  I: {fileID: 0}
+  I_: {fileID: 0}
+  A: {fileID: 0}
+  A_: {fileID: 0}
 --- !u!1 &1199989116
 GameObject:
   m_ObjectHideFlags: 0

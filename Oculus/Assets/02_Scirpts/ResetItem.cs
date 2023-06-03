@@ -6,11 +6,13 @@ public class ResetItem : MonoBehaviour
 {
     private Vector3 originalPosition;
     private bool isReturning;
+    private Rigidbody rigidbody;
 
     private void Start()
     {
         originalPosition = transform.position;
         isReturning = false;
+        rigidbody = GetComponent<Rigidbody>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -19,6 +21,8 @@ public class ResetItem : MonoBehaviour
         {
             isReturning = true;
             ReturnToOriginalPosition();
+            rigidbody.velocity = Vector3.zero;
+            rigidbody.angularVelocity = Vector3.zero;
         }
     }
 

@@ -17,6 +17,10 @@ public class Laser : MonoBehaviour
     private float dist;
 
     public Text text;
+    public Text text_;
+
+    public GameObject Desk;
+    public GameObject Drawer;
 
     Button buttonUI;
     // Start is called before the first frame update
@@ -88,6 +92,7 @@ public class Laser : MonoBehaviour
         {
             switch (hitObject.name)
             {
+                #region KeyPadDesk
                 case "KeyPad1":
                     if (OVRInput.GetDown(OVRInput.Button.One))
                     {
@@ -196,12 +201,17 @@ public class Laser : MonoBehaviour
                             text.text = "";
 
                             text.text += "Correct";
+
+                            Desk.gameObject.GetComponent<Animator>().SetTrigger("DeskOpen");
                         }
                         else
                         {
                             text.text = "";
 
                             text.text += "Wrong";
+
+                            Invoke("resetKeypad", 1f);
+
                         }
 
                     }
@@ -216,8 +226,154 @@ public class Laser : MonoBehaviour
 
                     }
                     break;
+                #endregion
 
+
+                #region KeyPadDrawer
+                case "KeyPad1_":
+                    if (OVRInput.GetDown(OVRInput.Button.One))
+                    {
+                        if (text_.text.Length < 4)
+                        {
+                            text_.text += 1.ToString();
+                        }
+
+                    }
+                    break;
+                case "KeyPad2_":
+                    if (OVRInput.GetDown(OVRInput.Button.One))
+                    {
+                        if (text_.text.Length < 4)
+                        {
+                            text_.text += 2.ToString();
+                        }
+
+                    }
+                    break;
+                case "KeyPad3_":
+                    if (OVRInput.GetDown(OVRInput.Button.One))
+                    {
+                        if (text_.text.Length < 4)
+                        {
+                            text_.text += 3.ToString();
+                        }
+
+                    }
+                    break;
+                case "KeyPad4_":
+                    if (OVRInput.GetDown(OVRInput.Button.One))
+                    {
+                        if (text_.text.Length < 4)
+                        {
+                            text_.text += 4.ToString();
+                        }
+
+                    }
+                    break;
+                case "KeyPad5_":
+                    if (OVRInput.GetDown(OVRInput.Button.One))
+                    {
+                        if (text_.text.Length < 4)
+                        {
+                            text_.text += 5.ToString();
+                        }
+
+                    }
+                    break;
+                case "KeyPad6_":
+                    if (OVRInput.GetDown(OVRInput.Button.One))
+                    {
+                        if (text_.text.Length < 4)
+                        {
+                            text_.text += 6.ToString();
+                        }
+
+                    }
+                    break;
+                case "KeyPad7_":
+                    if (OVRInput.GetDown(OVRInput.Button.One))
+                    {
+                        if (text_.text.Length < 4)
+                        {
+                            text_.text += 7.ToString();
+                        }
+
+                    }
+                    break;
+                case "KeyPad8_":
+                    if (OVRInput.GetDown(OVRInput.Button.One))
+                    {
+                        if (text_.text.Length < 4)
+                        {
+                            text_.text += 8.ToString();
+                        }
+
+                    }
+                    break;
+                case "KeyPad9_":
+                    if (OVRInput.GetDown(OVRInput.Button.One))
+                    {
+                        if (text_.text.Length < 4)
+                        {
+                            text_.text += 9.ToString();
+                        }
+
+                    }
+                    break;
+                case "KeyPad0_":
+                    if (OVRInput.GetDown(OVRInput.Button.One))
+                    {
+                        if (text_.text.Length < 4)
+                        {
+                            text_.text += 0.ToString();
+                        }
+
+                    }
+                    break;
+                case "KeyPadOk_":
+                    if (OVRInput.GetDown(OVRInput.Button.One))
+                    {
+                        if (text_.text == "4321")
+                        {
+                            text_.text = "";
+
+                            text_.text += "Correct";
+
+                            Drawer.gameObject.GetComponent<Animator>().SetTrigger("DrawerOpen");
+
+                        }
+                        else
+                        {
+                            text_.text = "";
+
+                            text_.text += "Wrong";
+
+                            Invoke("resetKeypad_", 1f);
+                        }
+
+                    }
+                    break;
+                case "KeyPadBack_":
+                    if (OVRInput.GetDown(OVRInput.Button.One))
+                    {
+
+
+                        text_.text = "";
+
+
+                    }
+                    break;
+                    #endregion
             }
         }
+    }
+
+    void resetKeypad()
+    {
+        text.text = "";
+    }
+    void resetKeypad_()
+    {
+        text_.text = "";
     }
 }

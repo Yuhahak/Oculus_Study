@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 8870049097149561591}
   - component: {fileID: 4112946539331666692}
   - component: {fileID: 8508443405262939612}
-  - component: {fileID: 1384546041610866309}
+  - component: {fileID: 59053480035710041}
+  - component: {fileID: 7177705049831060353}
   m_Layer: 9
   m_Name: Ball
   m_TagString: Ball
@@ -30,11 +31,11 @@ Transform:
   m_GameObject: {fileID: 5506040382581096852}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 18.045734, y: 4.403354, z: -15.738584}
-  m_LocalScale: {x: 37.98, y: 37.98, z: 37.98}
+  m_LocalScale: {x: 1.8596922, y: 1.8596922, z: 1.8596922}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8388990716122661050
 MeshFilter:
@@ -131,7 +132,28 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
---- !u!114 &1384546041610866309
+--- !u!135 &59053480035710041
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5506040382581096852}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.009814189
+  m_Center: {x: 0.0000000013969838, y: 0, z: -4.6566126e-10}
+--- !u!114 &7177705049831060353
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
