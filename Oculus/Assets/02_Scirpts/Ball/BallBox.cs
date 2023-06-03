@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BallBox : MonoBehaviour
 {
+    public GameObject closet;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +22,9 @@ public class BallBox : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ball"))
         {
-            Debug.Log("BallBox");
+            closet.gameObject.GetComponent<Animator>().SetTrigger("ClosetOpen");
+
+
         }
     }
 }

@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class ResetItem : MonoBehaviour
 {
-    private Vector3 originalPosition;
+    //private Vector3 originalPosition;
+    public Transform targetPosition;
     private bool isReturning;
     private Rigidbody rigidbody;
 
     private void Start()
     {
-        originalPosition = transform.position;
+        //originalPosition = transform.position;
         isReturning = false;
         rigidbody = GetComponent<Rigidbody>();
     }
@@ -36,7 +37,7 @@ public class ResetItem : MonoBehaviour
 
     private void ReturnToOriginalPosition()
     {
-        transform.position = originalPosition;
+        transform.position = targetPosition.position;
         isReturning = false;
     }
 }

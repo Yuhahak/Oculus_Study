@@ -2,21 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AlphabetFrame : MonoBehaviour
+public class I_Frame : MonoBehaviour
 {
     public string collidedObjectName;
 
-    public GameObject J;
-    public GameObject J_;
+    public GameObject I;
+    public GameObject I_;
 
 
     private void Update()
     {
         switch (collidedObjectName)
         {
-            case "J":
-                Destroy(J);
-                J_.gameObject.SetActive(true);
+            case "I":
+                Destroy(I);
+                I_.gameObject.SetActive(true);
                 break;
         }
     }
