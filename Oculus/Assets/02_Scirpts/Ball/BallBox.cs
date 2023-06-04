@@ -5,6 +5,8 @@ using UnityEngine;
 public class BallBox : MonoBehaviour
 {
     public GameObject closet;
+    public GameObject Ball;
+    public Transform targetPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +24,8 @@ public class BallBox : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ball"))
         {
+            Ball.transform.position = targetPosition.position;
+
             closet.gameObject.GetComponent<Animator>().SetTrigger("ClosetOpen");
 
 

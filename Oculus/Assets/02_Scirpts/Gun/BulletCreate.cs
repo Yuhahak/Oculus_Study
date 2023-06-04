@@ -33,7 +33,7 @@ public class BulletCreate : MonoBehaviour
             Rigidbody bulletRb =
                 Instantiate(prefabBullet, BulletPos.position, BulletPos.localRotation);
 
-            bulletRb.velocity = 20.0f * transform.forward;
+            bulletRb.velocity = -20.0f * transform.right;
     }
 
 

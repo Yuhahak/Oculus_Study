@@ -7,6 +7,8 @@ public class ToyBoxOpen : MonoBehaviour
     public GameObject ToyBox;
     public GameObject ToyBoxKey;
     private bool ToyBoxOpenCheck = false;
+    public Transform targetPosition;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,8 @@ public class ToyBoxOpen : MonoBehaviour
         {
             ToastManager.Instance.showMessage("Open ToyBox", 1f);
             ToyBoxOpenCheck = true;
+            ToyBoxKey.transform.position = targetPosition.position;
+
         }
     }
 

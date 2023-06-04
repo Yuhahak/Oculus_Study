@@ -14,4 +14,12 @@ public class InstanceManager : MonoBehaviour
 
     public bool ToyBoxOpen = false;
     public bool BallBox = false;
+
+    public bool J_Block = false;
+    public bool U_Block = false;
+    public bool L_Block = false;
+    public bool I_Block = false;
+    public bool A_Block = false;
+
+    
 }

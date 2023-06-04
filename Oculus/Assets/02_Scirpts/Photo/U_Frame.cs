@@ -4,27 +4,22 @@ using UnityEngine;
 
 public class U_Frame : MonoBehaviour
 {
-    public string collidedObjectName;
 
     public GameObject U;
     public GameObject U_;
 
-
-    private void Update()
-    {
-        switch (collidedObjectName)
-        {
-            case "U":
-                Destroy(U);
-                U_.gameObject.SetActive(true);
-                break;
-        }
-    }
-
+    public Transform targetPosition;
 
     private void OnCollisionEnter(Collision collision)
     {
         // Access the name of the object colliding with this game object
-        collidedObjectName = collision.gameObject.name;
+        if (collision.gameObject.name == "U")
+        {
+            U.transform.position = targetPosition.position;
+
+            U_.gameObject.SetActive(true);
+            InstanceManager.s.U_Block = true;
+
+        }
     }
 }
