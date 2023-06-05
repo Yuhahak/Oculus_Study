@@ -11,6 +11,7 @@ public class AlphabetFrame : MonoBehaviour
     public Transform targetPosition;
 
 
+    public PlayerAudio playerAudio;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -20,6 +21,7 @@ public class AlphabetFrame : MonoBehaviour
             J.transform.position = targetPosition.position;
             J_.gameObject.SetActive(true);
             InstanceManager.s.J_Block = true;
+            playerAudio.Play(PlayerAudio.AudioType.Alphabet, true);
 
         }
     }

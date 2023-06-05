@@ -9,6 +9,8 @@ public class ResetItem : MonoBehaviour
     private bool isReturning;
     private Rigidbody rigidbody;
 
+    public PlayerAudio playerAudio;
+
     private void Start()
     {
         //originalPosition = transform.position;
@@ -24,6 +26,7 @@ public class ResetItem : MonoBehaviour
             ReturnToOriginalPosition();
             rigidbody.velocity = Vector3.zero;
             rigidbody.angularVelocity = Vector3.zero;
+            playerAudio.Play(PlayerAudio.AudioType.Reset, true);
         }
     }
 

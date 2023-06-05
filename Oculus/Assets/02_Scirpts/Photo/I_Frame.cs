@@ -11,6 +11,7 @@ public class I_Frame : MonoBehaviour
 
     public Transform targetPosition;
 
+    public PlayerAudio playerAudio;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -21,6 +22,7 @@ public class I_Frame : MonoBehaviour
             
             I_.gameObject.SetActive(true);
             InstanceManager.s.I_Block = true;
+            playerAudio.Play(PlayerAudio.AudioType.Alphabet, true);
 
         }
     }

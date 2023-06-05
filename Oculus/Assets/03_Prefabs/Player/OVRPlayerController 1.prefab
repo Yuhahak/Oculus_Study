@@ -1530,7 +1530,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6362821349525372832}
-  - component: {fileID: 5047823078737495355}
+  - component: {fileID: 4862912331676678654}
   m_Layer: 0
   m_Name: RightLaser
   m_TagString: Untagged
@@ -1553,7 +1553,7 @@ Transform:
   m_Father: {fileID: 1564835222494450138}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5047823078737495355
+--- !u!114 &4862912331676678654
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1568,8 +1568,12 @@ MonoBehaviour:
   lineAxis: {fileID: 0}
   line: {fileID: 0}
   hitObject: {fileID: 0}
-  laserMat: {fileID: 2100000, guid: 893d63528ac191a499289044bbde2a31, type: 2}
+  laserMat: {fileID: 0}
   dist: 0
+  text: {fileID: 0}
+  text_: {fileID: 0}
+  Desk: {fileID: 0}
+  Drawer: {fileID: 0}
 --- !u!1 &2613528075031483124
 GameObject:
   m_ObjectHideFlags: 0

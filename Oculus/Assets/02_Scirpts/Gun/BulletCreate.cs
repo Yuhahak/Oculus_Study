@@ -8,7 +8,7 @@ public class BulletCreate : MonoBehaviour
     public Rigidbody prefabBullet;
     public Transform BulletPos;
 
-
+    public PlayerAudio playerAudio;
 
 
 
@@ -34,6 +34,8 @@ public class BulletCreate : MonoBehaviour
                 Instantiate(prefabBullet, BulletPos.position, BulletPos.localRotation);
 
             bulletRb.velocity = -20.0f * transform.right;
+
+        playerAudio.Play(PlayerAudio.AudioType.Gun, true);
     }
 
 

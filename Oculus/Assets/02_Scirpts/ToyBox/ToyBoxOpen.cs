@@ -9,6 +9,8 @@ public class ToyBoxOpen : MonoBehaviour
     private bool ToyBoxOpenCheck = false;
     public Transform targetPosition;
 
+    public PlayerAudio playerAudio;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,9 +27,10 @@ public class ToyBoxOpen : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Key"))
         {
-            ToastManager.Instance.showMessage("Open ToyBox", 1f);
             ToyBoxOpenCheck = true;
             ToyBoxKey.transform.position = targetPosition.position;
+            playerAudio.Play(PlayerAudio.AudioType.Clear, true);
+
 
         }
     }

@@ -22,6 +22,8 @@ public class Laser : MonoBehaviour
     public GameObject Desk;
     public GameObject Drawer;
 
+    public PlayerAudio playerAudio;
+
     Button buttonUI;
     // Start is called before the first frame update
     void Start()
@@ -99,6 +101,7 @@ public class Laser : MonoBehaviour
                         if (text.text.Length < 4)
                         {
                             text.text += 1.ToString();
+                            playerAudio.Play(PlayerAudio.AudioType.Button, true);
                         }
 
                     }
@@ -108,6 +111,7 @@ public class Laser : MonoBehaviour
                     {
                         if (text.text.Length < 4)
                         {
+                            playerAudio.Play(PlayerAudio.AudioType.Button, true);
                             text.text += 2.ToString();
                         }
 
@@ -118,6 +122,7 @@ public class Laser : MonoBehaviour
                     {
                         if (text.text.Length < 4)
                         {
+                            playerAudio.Play(PlayerAudio.AudioType.Button, true);
                             text.text += 3.ToString();
                         }
 
@@ -128,6 +133,7 @@ public class Laser : MonoBehaviour
                     {
                         if (text.text.Length < 4)
                         {
+                            playerAudio.Play(PlayerAudio.AudioType.Button, true);
                             text.text += 4.ToString();
                         }
 
@@ -138,6 +144,7 @@ public class Laser : MonoBehaviour
                     {
                         if (text.text.Length < 4)
                         {
+                            playerAudio.Play(PlayerAudio.AudioType.Button, true);
                             text.text += 5.ToString();
                         }
 
@@ -148,6 +155,7 @@ public class Laser : MonoBehaviour
                     {
                         if (text.text.Length < 4)
                         {
+                            playerAudio.Play(PlayerAudio.AudioType.Button, true);
                             text.text += 6.ToString();
                         }
 
@@ -158,6 +166,7 @@ public class Laser : MonoBehaviour
                     {
                         if (text.text.Length < 4)
                         {
+                            playerAudio.Play(PlayerAudio.AudioType.Button, true);
                             text.text += 7.ToString();
                         }
 
@@ -168,6 +177,7 @@ public class Laser : MonoBehaviour
                     {
                         if (text.text.Length < 4)
                         {
+                            playerAudio.Play(PlayerAudio.AudioType.Button, true);
                             text.text += 8.ToString();
                         }
 
@@ -178,6 +188,7 @@ public class Laser : MonoBehaviour
                     {
                         if (text.text.Length < 4)
                         {
+                            playerAudio.Play(PlayerAudio.AudioType.Button, true);
                             text.text += 9.ToString();
                         }
 
@@ -188,6 +199,7 @@ public class Laser : MonoBehaviour
                     {
                         if (text.text.Length < 4)
                         {
+                            playerAudio.Play(PlayerAudio.AudioType.Button, true);
                             text.text += 0.ToString();
                         }
 
@@ -203,11 +215,14 @@ public class Laser : MonoBehaviour
                             text.text += "Correct";
 
                             Desk.gameObject.GetComponent<Animator>().SetTrigger("DeskOpen");
+                            playerAudio.Play(PlayerAudio.AudioType.Clear, true);
+                            playerAudio.Play(PlayerAudio.AudioType.DrawerOpen, true);
                         }
                         else
                         {
                             text.text = "";
 
+                            playerAudio.Play(PlayerAudio.AudioType.Button, true);
                             text.text += "Wrong";
 
                             Invoke("resetKeypad", 1f);
@@ -221,8 +236,9 @@ public class Laser : MonoBehaviour
                     {
                         
                         
-                            text.text = "" ;
-                        
+                            playerAudio.Play(PlayerAudio.AudioType.Button, true);
+                            text.text = "";
+
 
                     }
                     break;
@@ -235,6 +251,7 @@ public class Laser : MonoBehaviour
                     {
                         if (text_.text.Length < 4)
                         {
+                            playerAudio.Play(PlayerAudio.AudioType.Button, true);
                             text_.text += 1.ToString();
                         }
 
@@ -245,6 +262,7 @@ public class Laser : MonoBehaviour
                     {
                         if (text_.text.Length < 4)
                         {
+                            playerAudio.Play(PlayerAudio.AudioType.Button, true);
                             text_.text += 2.ToString();
                         }
 
@@ -255,6 +273,7 @@ public class Laser : MonoBehaviour
                     {
                         if (text_.text.Length < 4)
                         {
+                            playerAudio.Play(PlayerAudio.AudioType.Button, true);
                             text_.text += 3.ToString();
                         }
 
@@ -265,6 +284,7 @@ public class Laser : MonoBehaviour
                     {
                         if (text_.text.Length < 4)
                         {
+                            playerAudio.Play(PlayerAudio.AudioType.Button, true);
                             text_.text += 4.ToString();
                         }
 
@@ -275,6 +295,7 @@ public class Laser : MonoBehaviour
                     {
                         if (text_.text.Length < 4)
                         {
+                            playerAudio.Play(PlayerAudio.AudioType.Button, true);
                             text_.text += 5.ToString();
                         }
 
@@ -285,6 +306,7 @@ public class Laser : MonoBehaviour
                     {
                         if (text_.text.Length < 4)
                         {
+                            playerAudio.Play(PlayerAudio.AudioType.Button, true);
                             text_.text += 6.ToString();
                         }
 
@@ -295,6 +317,7 @@ public class Laser : MonoBehaviour
                     {
                         if (text_.text.Length < 4)
                         {
+                            playerAudio.Play(PlayerAudio.AudioType.Button, true);
                             text_.text += 7.ToString();
                         }
 
@@ -305,6 +328,7 @@ public class Laser : MonoBehaviour
                     {
                         if (text_.text.Length < 4)
                         {
+                            playerAudio.Play(PlayerAudio.AudioType.Button, true);
                             text_.text += 8.ToString();
                         }
 
@@ -315,6 +339,7 @@ public class Laser : MonoBehaviour
                     {
                         if (text_.text.Length < 4)
                         {
+                            playerAudio.Play(PlayerAudio.AudioType.Button, true);
                             text_.text += 9.ToString();
                         }
 
@@ -325,6 +350,7 @@ public class Laser : MonoBehaviour
                     {
                         if (text_.text.Length < 4)
                         {
+                            playerAudio.Play(PlayerAudio.AudioType.Button, true);
                             text_.text += 0.ToString();
                         }
 
@@ -340,6 +366,8 @@ public class Laser : MonoBehaviour
                             text_.text += "Correct";
 
                             Drawer.gameObject.GetComponent<Animator>().SetTrigger("DrawerOpen");
+                            playerAudio.Play(PlayerAudio.AudioType.Clear, true);
+                            playerAudio.Play(PlayerAudio.AudioType.DrawerOpen, true);
 
                         }
                         else
@@ -348,6 +376,7 @@ public class Laser : MonoBehaviour
 
                             text_.text += "Wrong";
 
+                            playerAudio.Play(PlayerAudio.AudioType.Button, true);
                             Invoke("resetKeypad_", 1f);
                         }
 
@@ -358,6 +387,7 @@ public class Laser : MonoBehaviour
                     {
 
 
+                            playerAudio.Play(PlayerAudio.AudioType.Button, true);
                         text_.text = "";
 
 

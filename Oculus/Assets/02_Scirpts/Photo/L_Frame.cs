@@ -10,6 +10,7 @@ public class L_Frame : MonoBehaviour
 
     public Transform targetPosition;
 
+    public PlayerAudio playerAudio;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -20,6 +21,7 @@ public class L_Frame : MonoBehaviour
 
             L_.gameObject.SetActive(true);
             InstanceManager.s.L_Block = true;
+            playerAudio.Play(PlayerAudio.AudioType.Alphabet, true);
 
         }
     }

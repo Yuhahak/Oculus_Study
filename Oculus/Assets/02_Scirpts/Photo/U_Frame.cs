@@ -9,6 +9,7 @@ public class U_Frame : MonoBehaviour
     public GameObject U_;
 
     public Transform targetPosition;
+    public PlayerAudio playerAudio;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -19,6 +20,7 @@ public class U_Frame : MonoBehaviour
 
             U_.gameObject.SetActive(true);
             InstanceManager.s.U_Block = true;
+            playerAudio.Play(PlayerAudio.AudioType.Alphabet, true);
 
         }
     }
