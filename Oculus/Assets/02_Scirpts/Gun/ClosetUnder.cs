@@ -19,8 +19,6 @@ public class ClosetUnder : MonoBehaviour
       if(InstanceManager.s.A_Block == true && InstanceManager.s.J_Block == true && InstanceManager.s.U_Block == true && InstanceManager.s.L_Block == true && InstanceManager.s.I_Block == true)
         {
             anim.SetTrigger("ClosetUnderOpen");
-            playerAudio.Play(PlayerAudio.AudioType.DrawerOpen, true);
-            playerAudio.Play(PlayerAudio.AudioType.Clear, true);
 
         }
     }

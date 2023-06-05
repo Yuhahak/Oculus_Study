@@ -18,11 +18,14 @@ public class PlayerAudio : MonoBehaviour
     [SerializeField] AudioSource MainDoorOpenSound = null;
     [SerializeField] AudioSource ResetSound = null;
     [SerializeField] AudioSource ButtonSound = null;
+    [SerializeField] AudioSource PhoneSound = null;
+    [SerializeField] AudioSource TakePhoneSound = null;
+
 
 
     public enum AudioType
     {
-        DrawerOpen, Alphabet, Clear, Gun, MainDoorOpen, Reset, Button
+        DrawerOpen, Alphabet, Clear, Gun, MainDoorOpen, Reset, Button, Phone, TakePhone
     }
 
     public void Play(AudioType audioType, bool playState)
@@ -50,6 +53,12 @@ public class PlayerAudio : MonoBehaviour
                 break;
             case AudioType.Button:
                 audioSource = ButtonSound;
+                break;
+            case AudioType.Phone:
+                audioSource = PhoneSound;
+                break;
+            case AudioType.TakePhone:
+                audioSource = TakePhoneSound;
                 break;
         }
         if (audioSource != null)
