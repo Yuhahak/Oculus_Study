@@ -23,7 +23,7 @@ public class Key : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            gameObject.GetComponent<Rigidbody>().isKinematic = false;
+            gameObject.GetComponent<Rigidbody>().useGravity = true;
 
         }
     }

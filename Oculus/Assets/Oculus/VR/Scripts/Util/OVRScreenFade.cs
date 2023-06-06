@@ -136,7 +136,10 @@ public class OVRScreenFade : MonoBehaviour
 	{
 		StartCoroutine(Fade(1.0f, 0.0f));
 	}
-
+	public void FadeIn2()
+	{
+		StartCoroutine(Fade(3.0f, 0.0f));
+	}
 	/// <summary>
 	/// Start a fade out
 	/// </summary>
@@ -151,6 +154,8 @@ public class OVRScreenFade : MonoBehaviour
 	void OnLevelFinishedLoading(int level)
 	{
 		FadeIn();
+		FadeIn2();
+
 	}
 
 	void OnEnable()
