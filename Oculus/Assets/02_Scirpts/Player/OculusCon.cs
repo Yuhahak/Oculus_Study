@@ -19,8 +19,6 @@ public class OculusCon : MonoBehaviour
     public GameObject grabR;
 
     
-    [SerializeField] public Text Ans; //입력받는 텍스트
-    private string Answer = "1234"; //답
 
 
 

@@ -13,11 +13,12 @@ public class EndingScene : MonoBehaviour
 
     private void Update()
     {
-        Invoke("On1", 5f);
-        Invoke("On2", 10f);
-        Invoke("FadeIN", 15f);
+        Invoke("On1", 7f);
+        Invoke("On2", 14f);
+        Invoke("On3", 21f);
+        Invoke("FadeIN", 40f);
 
-        Invoke("GoMain", 17f);
+        Invoke("GoMain", 42f);
 
     }
 
@@ -30,6 +31,11 @@ public class EndingScene : MonoBehaviour
     void On2()
     {
         Image2.gameObject.SetActive(false);
+        MainPayerAudio.Play(MainPayerAudio.AudioType.Book, true);
+    }
+    void On3()
+    {
+        Image3.gameObject.SetActive(false);
         MainPayerAudio.Play(MainPayerAudio.AudioType.Book, true);
     }
 
