@@ -208,7 +208,7 @@ public class Laser : MonoBehaviour
                 case "KeyPadOk":
                     if (OVRInput.GetDown(OVRInput.Button.One))
                     {
-                        if (text.text == "1323")
+                        if (text.text == "2311")
                         {
                             text.text = "";
 
@@ -359,7 +359,7 @@ public class Laser : MonoBehaviour
                 case "KeyPadOk_":
                     if (OVRInput.GetDown(OVRInput.Button.One))
                     {
-                        if (text_.text == "4321")
+                        if (text_.text == "9345")
                         {
                             text_.text = "";
 

@@ -10,7 +10,7 @@ public class LaserOut : MonoBehaviour
 
 
     public GameObject hitObject;
-    private float maxDistance = 30.0f;
+    private float maxDistance = 1000.0f;
     public Material laserMat;
     [SerializeField]
     private float dist;
