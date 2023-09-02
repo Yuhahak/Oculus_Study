@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyBase : MonoBehaviour
 {
+    public Player player;
+
     [Header("Stat")]
     public int enemy_Hp;
     public float enemy_MoveSpeed;
