@@ -47,7 +47,7 @@ public class EnemyOne : EnemyBase
         FreezeVelocity();
         EnmeyUIFollow();
 
-        if (enemy_Hp <= 0f)
+        if (currentHp <= 0f)
         {
             EnemyDeath();
         }

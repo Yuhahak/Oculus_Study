@@ -18,9 +18,18 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Ground"))
+        if (other.gameObject.CompareTag("Enemy"))
         {
-            EnemyOne.instance.EnemyTakeDamage(0f);
+            EnemyOne enemy = other.gameObject.GetComponent<EnemyOne>();
+            if (enemy != null)
+            {
+                enemy.EnemyTakeDamage(0); // 개별 데미지 값을 전달
+                Destroy(gameObject);
+            }
+        }
+
+        if (other.gameObject.CompareTag("Ground"))
+        {
             Destroy(gameObject);
         }
     }

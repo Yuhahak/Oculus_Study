@@ -5,7 +5,19 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public Player player;
+    public static GameManager instance;
 
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +30,15 @@ public class GameManager : MonoBehaviour
         if (player.hp <= 0)
         {
             GameOver();
+        }
+    }
+
+    public void ApplyDamageToLastSpawnedEnemy(float damage)
+    {
+        SpawnEnemy spawnEnemy = FindObjectOfType<SpawnEnemy>();
+        if (spawnEnemy != null)
+        {
+            spawnEnemy.ApplyDamageToLastSpawnedEnemy(damage);
         }
     }
 

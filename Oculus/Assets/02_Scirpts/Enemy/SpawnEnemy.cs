@@ -5,8 +5,8 @@ using UnityEngine;
 public class SpawnEnemy : MonoBehaviour
 {
     public Transform[] spawnPos;
-
     public GameObject enemyOne;
+    private List<GameObject> spawnedEnemies = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +26,22 @@ public class SpawnEnemy : MonoBehaviour
         {
             yield return new WaitForSeconds(1f);
 
-            Instantiate(enemyOne, spawnPos[Random.Range(0, 3)]);
+            Transform spawnPoint = spawnPos[Random.Range(0, 3)];
+            GameObject newEnemy = Instantiate(enemyOne, spawnPoint.position, Quaternion.identity);
+            spawnedEnemies.Add(newEnemy);
+        }
+    }
+
+    public void ApplyDamageToLastSpawnedEnemy(float damage)
+    {
+        if (spawnedEnemies.Count > 0)
+        {
+            GameObject lastEnemy = spawnedEnemies[spawnedEnemies.Count - 1];
+            EnemyOne enemyScript = lastEnemy.GetComponent<EnemyOne>();
+            if (enemyScript != null)
+            {
+                enemyScript.EnemyTakeDamage(damage);
+            }
         }
     }
 }
