@@ -4,8 +4,22 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public static Player instance;
+
+
     [Header("Stat")]
-    public int hp;
+    public float hp;
     public float moveSpeed;
-    public int damage;
+    public float damage;
+
+    private void Awake()
+    {
+        Player.instance = this;
+    }
+
+
+    public void Damaged(float EnemyDamage)
+    {
+        hp -= EnemyDamage;
+    }
 }

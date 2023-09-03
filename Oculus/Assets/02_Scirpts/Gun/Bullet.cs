@@ -16,19 +16,11 @@ public class Bullet : MonoBehaviour
         
     }
 
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Ground"))
-    //    {
-    //        Destroy(gameObject);
-    //    }
-    //}
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Ground"))
         {
-            EnemyOne.instance.EnemyTakeDamage(0);
+            EnemyOne.instance.EnemyTakeDamage(0f);
             Destroy(gameObject);
         }
     }
