@@ -48,8 +48,17 @@ public class PlayerMove : MonoBehaviour
                 yV = jumpPower; //접지함과 동시에 space를 눌렀다면 jumpPower 적용
             }
         }
+        else
+        {
+            yV += (gravityPower * Time.deltaTime); //jumpPower에 gravityPower * deltaTime 적용
 
-        yV += (gravityPower * Time.deltaTime); //jumpPower에 gravityPower * deltaTime 적용
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q)) //접지하고 있지 않으면 작동되지 않음
+        {
+            yV = 50f; //접지함과 동시에 space를 눌렀다면 jumpPower 적용
+        }
+
         movement.y = yV; //빈 y좌표에 집어넣음
         characterController.Move(movement * Time.deltaTime); //movement에 deltaTime 적용, Vector3에 deltaTime 적용이라봐도 무방할듯
     }
