@@ -5,12 +5,12 @@ using UnityEngine;
 public class OriginalReset : MonoBehaviour
 {
     private Vector3 originalPosition;
-    private Rigidbody rigidbody;
+    private Rigidbody rigid;
 
     private void Start()
     {
         originalPosition = transform.position;
-        rigidbody = GetComponent<Rigidbody>();
+        rigid = GetComponent<Rigidbody>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -21,8 +21,8 @@ public class OriginalReset : MonoBehaviour
             transform.position = originalPosition;
 
             // 운동값 초기화
-            rigidbody.velocity = Vector3.zero;
-            rigidbody.angularVelocity = Vector3.zero;
+            rigid.velocity = Vector3.zero;
+            rigid.angularVelocity = Vector3.zero;
         }
     }
 }

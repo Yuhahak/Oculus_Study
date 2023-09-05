@@ -16,6 +16,7 @@ public class EnemyOne : EnemyBase
     public Image enemy_HpBar_Back;
     private float maxHp;
     private float currentHp; // 새로운 변수 추가
+    private bool isDead = false;
 
     private void Start()
     {
@@ -47,7 +48,7 @@ public class EnemyOne : EnemyBase
         FreezeVelocity();
         EnmeyUIFollow();
 
-        if (currentHp <= 0f)
+        if (currentHp <= 0f && !isDead)
         {
             EnemyDeath();
         }
@@ -68,9 +69,10 @@ public class EnemyOne : EnemyBase
 
     void EnemyDeath()
     {
+        isDead = true;
         gameObject.GetComponent<BoxCollider>().enabled = false;
-        nav.speed = 0;
-        Destroy(gameObject, 2f);
+        DropItem.instance.RandomItemDrop(transform.position);
+        Destroy(gameObject);
     }
 
     void EnmeyUIFollow()

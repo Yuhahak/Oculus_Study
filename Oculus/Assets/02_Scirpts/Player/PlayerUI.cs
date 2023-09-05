@@ -17,6 +17,10 @@ public class PlayerUI : MonoBehaviour
 
     private void Update()
     {
-        hpBar.fillAmount = player.hp / maxHp;
+        if(player.hp != 0)
+        {
+            hpBar.fillAmount = player.hp / maxHp;
+        }
+        
     }
 }

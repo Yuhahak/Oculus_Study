@@ -7,7 +7,7 @@ public class ResetItem : MonoBehaviour
     //private Vector3 originalPosition;
     public Transform targetPosition;
     private bool isReturning;
-    private Rigidbody rigidbody;
+    private Rigidbody rigid;
 
     public PlayerAudio playerAudio;
 
@@ -15,7 +15,7 @@ public class ResetItem : MonoBehaviour
     {
         //originalPosition = transform.position;
         isReturning = false;
-        rigidbody = GetComponent<Rigidbody>();
+        rigid = GetComponent<Rigidbody>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -24,8 +24,8 @@ public class ResetItem : MonoBehaviour
         {
             isReturning = true;
             ReturnToOriginalPosition();
-            rigidbody.velocity = Vector3.zero;
-            rigidbody.angularVelocity = Vector3.zero;
+            rigid.velocity = Vector3.zero;
+            rigid.angularVelocity = Vector3.zero;
             playerAudio.Play(PlayerAudio.AudioType.Reset, true);
         }
     }

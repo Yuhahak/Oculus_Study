@@ -8,15 +8,23 @@ public class Player : MonoBehaviour
 
 
     [Header("Stat")]
-    private float maxHp;
+    public float maxHp;
     public float hp;
     public float moveSpeed;
     public float damage;
 
+    private void Start()
+    {
+        maxHp = hp;
+    }
+
     private void Awake()
     {
         Player.instance = this;
-        maxHp = hp;
+    }
+
+    private void Update()
+    {
     }
 
 
