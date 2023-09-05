@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public Player player;
     public static GameManager instance;
+
+    public int coin;
+    public Text coin_Text;
 
     private void Awake()
     {
@@ -27,6 +31,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        coin_Text.text = coin.ToString();
+
         if (player.hp <= 0)
         {
             GameOver();

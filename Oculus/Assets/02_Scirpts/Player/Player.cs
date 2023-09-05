@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
 
 
     [Header("Stat")]
+    private float maxHp;
     public float hp;
     public float moveSpeed;
     public float damage;
@@ -15,11 +16,25 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         Player.instance = this;
+        maxHp = hp;
     }
 
 
     public void Damaged(float EnemyDamage)
     {
         hp -= EnemyDamage;
+        if (hp < 0)
+        {
+            hp = 0;
+        }
+    }
+
+    public void Heal(float Heal)
+    {
+        hp += Heal;
+        if (hp > maxHp)
+        {
+            hp = maxHp;
+        }
     }
 }

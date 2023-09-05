@@ -62,6 +62,7 @@ public class Magic : MonoBehaviour
         var magicObj = Instantiate(magicPrefab, firePoint.position, Quaternion.identity) as GameObject;
         magicObj.GetComponent<Rigidbody>().velocity = (destinattion - firePoint.position).normalized * magicSpeed;
 
+
         iTween.PunchPosition(magicObj, new Vector3(Random.Range(-arcRange, arcRange), Random.Range(-arcRange, arcRange), 0), Random.Range(0.5f, 2));
 
         Destroy(magicObj, 2.0f);

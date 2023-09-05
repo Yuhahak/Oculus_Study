@@ -26,7 +26,10 @@ public class PlayerMove : MonoBehaviour
     private void LateUpdate()
     {
         PCMove();
-
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            GameManager.instance.player.Damaged(100f);
+        }
     }
 
     void PCMove()

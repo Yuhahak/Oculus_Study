@@ -1,17 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpawnEnemy : MonoBehaviour
 {
     public Transform[] spawnPos;
-    public GameObject enemyOne;
+    public List<GameObject> enemyList = new List<GameObject>();
     private List<GameObject> spawnedEnemies = new List<GameObject>();
+
+    [Header("Timer")]
+    public Text timerText;
+
+    public int timer = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(SpawnEnemy_());
+        StartCoroutine(TimerCoroution());
     }
 
     // Update is called once per frame
@@ -25,10 +32,21 @@ public class SpawnEnemy : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(1f);
+            Transform spawnPoint = spawnPos[Random.Range(0, 4)];
 
-            Transform spawnPoint = spawnPos[Random.Range(0, 3)];
-            GameObject newEnemy = Instantiate(enemyOne, spawnPoint.position, Quaternion.identity);
-            spawnedEnemies.Add(newEnemy);
+            if (timer <= 10)
+            {
+                GameObject newEnemy = Instantiate(enemyList[0], spawnPoint.position, Quaternion.identity);
+                newEnemy.transform.SetParent(spawnPoint);
+                spawnedEnemies.Add(newEnemy);
+            }
+            else
+            {
+                GameObject newEnemy = Instantiate(enemyList[1], spawnPoint.position, Quaternion.identity);
+                newEnemy.transform.SetParent(spawnPoint);
+                spawnedEnemies.Add(newEnemy);
+            }
+
         }
     }
 
@@ -44,4 +62,16 @@ public class SpawnEnemy : MonoBehaviour
             }
         }
     }
+
+    IEnumerator TimerCoroution()
+    {
+        timer += 1;
+
+        timerText.text = (timer / 60 % 60).ToString("D2") + ":" + (timer % 60).ToString("D2");
+
+        yield return new WaitForSeconds(1f);
+
+        StartCoroutine(TimerCoroution());
+    }
+
 }
