@@ -12,8 +12,13 @@ public class Stat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        HpUp();
-        DamagedUp();
+        DataLoad();
+        StartCoroutine(StatSet());
+    }
+
+    private void Awake()
+    {
+
     }
 
     // Update is called once per frame
@@ -22,9 +27,11 @@ public class Stat : MonoBehaviour
         HpTiemHeal();
     }
 
+
     public void HpUp()
     {
-        GameManager.instance.player.hp += 200f * hpUp;
+        Player.instance.hp += 200f * hpUp;
+        Player.instance.maxHp = Player.instance.hp;
     }
 
     public void HpTiemHeal()
@@ -37,11 +44,27 @@ public class Stat : MonoBehaviour
 
     public void DamagedUp()
     {
-        GameManager.instance.player.damage += 2.5f * damageUp;
+        Player.instance.damage += 2.5f * damageUp;
     }
 
     public void MoveSpeedUp()
     {
         //vr개발할때 추가
+    }
+
+    void DataLoad()
+    {
+        DataManager.instance.LoadData();
+        hpUp = DataManager.instance.playerData.hpUp;
+        hpTimeHeal = DataManager.instance.playerData.hpTimeHeal;
+        damageUp = DataManager.instance.playerData.damageUp;
+        moveSpeedUp = DataManager.instance.playerData.moveSpeedUp;
+    }
+
+    IEnumerator StatSet()
+    {
+        yield return new WaitForEndOfFrame();
+        HpUp();
+        DamagedUp();
     }
 }

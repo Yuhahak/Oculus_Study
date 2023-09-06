@@ -15,7 +15,8 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        maxHp = hp;
+        GameManager.instance.coin = 0;
+        GameManager.instance.SS = true;
     }
 
     private void Awake()

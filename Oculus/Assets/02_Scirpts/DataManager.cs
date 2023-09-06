@@ -45,15 +45,6 @@ public class DataManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            SaveData();
-        }
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            LoadData();
-            DataSet();
-        }
     }
 
     public void SaveData()

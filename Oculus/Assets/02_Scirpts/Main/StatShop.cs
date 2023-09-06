@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class StatShop : MonoBehaviour
@@ -28,7 +29,6 @@ public class StatShop : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        OpenShop();
     }
 
     // Update is called once per frame
@@ -63,7 +63,7 @@ public class StatShop : MonoBehaviour
 
     public void GameStartBtn()
     {
-
+        SceneManager.LoadScene("SS");
     }
 
     public void HealBtn()
@@ -164,12 +164,14 @@ public class StatShop : MonoBehaviour
 
     public void OpenShop()
     {
+        if (!Shop.activeSelf)
+        {
             Shop.SetActive(true);
             mainPanel.SetActive(false);
             DataManager.instance.LoadData();
             StatLoadData();
             shopCoin = DataManager.instance.playerData.coin;
-            Debug.Log(DataManager.instance.playerData.coin);
+        }
     }
 
     private void UpdateStatImages(List<Image> statImages, int count)
