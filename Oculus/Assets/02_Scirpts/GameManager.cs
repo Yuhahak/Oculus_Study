@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         coin_Text.text = coin.ToString();
+        DataManager.instance.playerData.coin = coin;
 
         if (player.hp <= 0)
         {

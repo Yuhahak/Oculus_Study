@@ -5,8 +5,14 @@ using UnityEngine.UI;
 
 public class StatShop : MonoBehaviour
 {
-    public Sprite ChangeImage;
+    public GameObject Shop;
+    public GameObject mainPanel;
 
+    public int shopCoin; //코인
+    public Text shopCoinText;
+    public Sprite ChangeImage;
+    
+    [Header("Stat")]
     public List<Image> Heal = new List<Image>();
     public int healCount;
 
@@ -22,21 +28,59 @@ public class StatShop : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        OpenShop();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        shopCoinText.text = shopCoin.ToString();
+
+        UpdateStatImages(Heal, healCount);
+        UpdateStatImages(HealTime, healTimeCount);
+        UpdateStatImages(Damage, damagedCount);
+        UpdateStatImages(Speed, speedCount);
+    }
+
+    private void StatLoadData()
+    {
+        healCount = DataManager.instance.playerData.hpUp;
+        healTimeCount = DataManager.instance.playerData.hpTimeHeal;
+        damagedCount = DataManager.instance.playerData.damageUp;
+        speedCount = DataManager.instance.playerData.moveSpeedUp;
+    }
+
+    private void StatSaveData()
+    {
+        DataManager.instance.playerData.coin = shopCoin;
+        DataManager.instance.playerData.hpUp = healCount;
+        DataManager.instance.playerData.hpTimeHeal = healTimeCount;
+        DataManager.instance.playerData.damageUp = damagedCount;
+        DataManager.instance.playerData.moveSpeedUp = speedCount;
+    }
+
+    #region Btn
+
+    public void GameStartBtn()
+    {
+
     }
 
     public void HealBtn()
     {
         if(healCount < 6)
         {
-            healCount += 1;
-            Heal[healCount - 1].sprite = ChangeImage;
+            if(shopCoin > 99)
+            {
+                shopCoin -= 100;
+                healCount += 1;
+                DataManager.instance.playerData.hpUp += healCount;
+            }
+            else
+            {
+                Debug.Log("돈 부족");
+            }
+
         }
         
     }
@@ -45,8 +89,16 @@ public class StatShop : MonoBehaviour
     {
         if (healTimeCount < 6)
         {
-            healTimeCount += 1;
-            HealTime[healTimeCount - 1].sprite = ChangeImage;
+            if (shopCoin > 99)
+            {
+                shopCoin -= 100;
+                healTimeCount += 1;
+                DataManager.instance.playerData.hpUp += healTimeCount;
+            }
+            else
+            {
+                Debug.Log("돈 부족");
+            }
         }
     }
 
@@ -54,8 +106,16 @@ public class StatShop : MonoBehaviour
     {
         if (damagedCount < 6)
         {
-            damagedCount += 1;
-            Damage[damagedCount - 1].sprite = ChangeImage;
+            if (shopCoin > 99)
+            {
+                shopCoin -= 100;
+                damagedCount += 1;
+                DataManager.instance.playerData.hpUp += damagedCount;
+            }
+            else
+            {
+                Debug.Log("돈 부족");
+            }
         }
     }
 
@@ -63,8 +123,68 @@ public class StatShop : MonoBehaviour
     {
         if (speedCount < 6)
         {
-            speedCount += 1;
-            Speed[speedCount - 1].sprite = ChangeImage;
+            if (shopCoin > 99)
+            {
+                shopCoin -= 100;
+                speedCount += 1;
+                DataManager.instance.playerData.hpUp += speedCount;
+            }
+            else
+            {
+                Debug.Log("돈 부족");
+            }
+        }
+    }
+
+    public void BackShopBtn()  // 뒤로가기 버튼 세이브할 거 여기에 넣기
+    {
+        if (Shop.activeSelf)
+        {
+            StatSaveData();
+            DataManager.instance.SaveData();
+            Shop.SetActive(false);
+            mainPanel.SetActive(true);
+        }
+    }
+
+    public void ResetBtn()
+    {
+        shopCoin += (healCount + damagedCount + healTimeCount + speedCount) * 100;
+        healCount = 0;
+        damagedCount = 0;
+        healTimeCount = 0;
+        speedCount = 0;
+        DownImage(Damage);
+        DownImage(Heal);
+        DownImage(HealTime);
+        DownImage(Speed);
+    }
+
+    #endregion
+
+    public void OpenShop()
+    {
+            Shop.SetActive(true);
+            mainPanel.SetActive(false);
+            DataManager.instance.LoadData();
+            StatLoadData();
+            shopCoin = DataManager.instance.playerData.coin;
+            Debug.Log(DataManager.instance.playerData.coin);
+    }
+
+    private void UpdateStatImages(List<Image> statImages, int count)
+    {
+        for (int i = 0; i < statImages.Count; i++)
+        {
+            statImages[i].sprite = i < count ? ChangeImage : null;
+        }
+    }
+
+    private void DownImage(List<Image> statImages)
+    {
+        for (int i = 0; i < statImages.Count; i++)
+        {
+            statImages[i].sprite = null;
         }
     }
 }
