@@ -71,7 +71,7 @@ public class EnemyOne : EnemyBase
     {
         isDead = true;
         gameObject.GetComponent<BoxCollider>().enabled = false;
-        DropItem.instance.RandomItemDrop(transform.position);
+        DropItem.instance.RandomItemDrop(new Vector3(transform.position.x, transform.position.y - 0.4f, transform.position.z));
         Destroy(gameObject);
     }
 

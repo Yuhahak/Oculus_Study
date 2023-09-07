@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public Player player;
+    public Effect effect;
     public static GameManager instance;
 
     public int coin;

@@ -13,6 +13,7 @@ public class SpawnEnemy : MonoBehaviour
     public Text timerText;
 
     public int timer = 0;
+    private float spawnCount = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +32,7 @@ public class SpawnEnemy : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(spawnCount);
             Transform spawnPoint = spawnPos[Random.Range(0, 4)];
 
             if (timer <= 10)
@@ -42,6 +43,7 @@ public class SpawnEnemy : MonoBehaviour
             }
             else
             {
+                spawnCount = 0.1f;
                 GameObject newEnemy = Instantiate(enemyList[1], spawnPoint.position, Quaternion.identity);
                 newEnemy.transform.SetParent(spawnPoint);
                 spawnedEnemies.Add(newEnemy);
