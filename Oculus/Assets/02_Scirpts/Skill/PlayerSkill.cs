@@ -8,7 +8,11 @@ public class PlayerSkill : MonoBehaviour
     public GameObject player;
     public List<SkillManager> skillManager = new List<SkillManager>();
     public List<Image> skillIcon = new List<Image>();
+    public List<Text> skillCount = new List<Text>();
+
     private float[] skillCool = { 0 };
+    private bool isSkill = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -21,32 +25,52 @@ public class PlayerSkill : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            if(skillCool[0] <= 0)
+            if(!isSkill)
             {
                 StartCoroutine(SkillTimeCheck(0));
             }
         }
-
-        if (skillCool[0] > 0)
-        {
-            skillCool[0] -= Time.deltaTime;
-        }
-        Debug.Log(skillCool[0]);
     }
 
     IEnumerator SkillTimeCheck(int SkillNum)
     {
-        yield return null;
 
-        skillCool[SkillNum] = skillManager[SkillNum].cooltime;
-        Vector3 spawnPosition = player.transform.position + new Vector3(0, -1, 0); // Adjust the position as needed
-        Quaternion spawnRotation = Quaternion.identity; // Use the identity rotation or specify a custom rotation
+        isSkill = true;
+        float cooldown = skillCool[SkillNum];
+        SkillManager skill = skillManager[SkillNum];
+        Text skillText = skillCount[SkillNum];
 
-        // Instantiate the skill with the specified position and rotation
-        GameObject Skill_Z = Instantiate(skillManager[0].skillPrefab, spawnPosition, spawnRotation);
+        cooldown = skill.cooltime;
+        Vector3 spawnPosition = player.transform.position + new Vector3(0, -1, 0);
+        Quaternion spawnRotation = Quaternion.identity;
 
+        switch (SkillNum)
+        {
+            case 0:
+                GameObject Skill_Z = Instantiate(skill.skillPrefab, spawnPosition, spawnRotation);
+                Destroy(Skill_Z, 4.5f);
+                break;
+        }
+
+        while (isSkill)
+        {
+            if (cooldown > 0)
+            {
+                skillIcon[SkillNum].fillAmount = cooldown / skill.cooltime;
+                cooldown -= Time.deltaTime;
+                skillText.gameObject.SetActive(true);
+                skillText.text = ((int)cooldown).ToString();
+            }
+            else
+            {
+                skillText.gameObject.SetActive(false);
+                isSkill = false;
+            }
+            yield return null;
+        }
 
     }
+
 
 
 

@@ -4897,6 +4897,8 @@ GameObject:
   - component: {fileID: 6928458153528979022}
   - component: {fileID: 2100541099862133063}
   - component: {fileID: 1984875891814309306}
+  - component: {fileID: 6916187804195834599}
+  - component: {fileID: 720985783151819611}
   m_Layer: 0
   m_Name: Snow AOE
   m_TagString: Untagged
@@ -9800,6 +9802,39 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!65 &6916187804195834599
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161766660727748596}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 30.88, y: 9.64, z: 30.1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &720985783151819611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161766660727748596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b00cb12a2c114446a1ae5beacd958f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3340405831355010171
 GameObject:
   m_ObjectHideFlags: 0

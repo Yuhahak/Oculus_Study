@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         GameManager.instance.coin = 0;
-        GameManager.instance.SS = true;
+        StartCoroutine(SS_());
     }
 
     private void Awake()
@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+
     }
 
 
@@ -45,5 +46,11 @@ public class Player : MonoBehaviour
         {
             hp = maxHp;
         }
+    }
+
+    IEnumerator SS_()  //재입장시 플레이어 적용이 안될때 건들여야함 시간을 늘려
+    {
+        yield return new WaitForSeconds(1f);
+        GameManager.instance.SS = true;
     }
 }

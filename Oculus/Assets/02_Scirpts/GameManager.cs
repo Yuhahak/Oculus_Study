@@ -31,7 +31,6 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -40,14 +39,21 @@ public class GameManager : MonoBehaviour
         if (player == null && SS)
         {
             StartCoroutine(FindPlayer());
-            if(player != null)
+            if(player != null && !player.gameObject.activeSelf)
             {
                 SS = false;
             }
         }
+        if(coin_Text != null)
+        {
+            coin_Text.text = coin.ToString();
+        }
 
-        coin_Text.text = coin.ToString();
-        GameOver();
+        if(player.hp <= 0 && SS)
+        {
+            StartCoroutine(GameOver());
+        }
+
     }
 
     public void ApplyDamageToLastSpawnedEnemy(float damage)
@@ -59,17 +65,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void GameOver()
+    IEnumerator GameOver()
     {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
+            SS = false;
             Debug.Log("게임오버");
             DataManager.instance.playerData.coin += coin;
             DataManager.instance.SaveData();
+            yield return new WaitForSeconds(1f);
             SceneManager.LoadScene("Main");
             MouseControll.instance.unLock();
-            SS = false;
-        }
 
     }
 
