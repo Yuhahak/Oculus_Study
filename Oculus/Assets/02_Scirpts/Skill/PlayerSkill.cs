@@ -28,6 +28,7 @@ public class PlayerSkill : MonoBehaviour
             if(!isSkill)
             {
                 StartCoroutine(SkillTimeCheck(0));
+                GameManager.instance.audioManager.Play(AudioManager.AudioType.SnowAoe, true);
             }
         }
     }

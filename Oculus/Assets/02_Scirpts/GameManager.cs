@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public Player player;
     public Effect effect;
+    public AudioManager audioManager;
     public static GameManager instance;
 
     public int coin;
@@ -92,6 +93,13 @@ public class GameManager : MonoBehaviour
         {
             coin_Text = coin_textObj.GetComponent<Text>();
         }
+
+        GameObject AudioObject = GameObject.Find("Audio");
+        if (AudioObject != null)
+        {
+            audioManager = AudioObject.GetComponent<AudioManager>();
+        }
+
         DataManager.instance.LoadData();
         yield return null;
 

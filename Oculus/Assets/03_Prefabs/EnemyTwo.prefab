@@ -436,7 +436,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 80
@@ -473,7 +473,7 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
-  m_Acceleration: 50
+  m_Acceleration: 35
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 2
@@ -498,7 +498,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   enemy_Hp: 20
-  enemy_MoveSpeed: 5
+  enemy_MoveSpeed: 20
   enemy_Damage: 1
   target: {fileID: 0}
   enemy_HpBar: {fileID: 6404135060850647145}

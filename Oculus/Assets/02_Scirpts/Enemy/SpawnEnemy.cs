@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class SpawnEnemy : MonoBehaviour
 {
     public Transform[] spawnPos;
+    public Transform[] skySpawnPos;
     public List<GameObject> enemyList = new List<GameObject>();
     private List<GameObject> spawnedEnemies = new List<GameObject>();
 
@@ -34,6 +35,7 @@ public class SpawnEnemy : MonoBehaviour
         {
             yield return new WaitForSeconds(spawnCount);
             Transform spawnPoint = spawnPos[Random.Range(0, 4)];
+            Transform skySpawnPoint = skySpawnPos[Random.Range(0, 4)];
 
             if (timer <= 10)
             {
@@ -43,9 +45,8 @@ public class SpawnEnemy : MonoBehaviour
             }
             else
             {
-                spawnCount = 0.1f;
-                GameObject newEnemy = Instantiate(enemyList[1], spawnPoint.position, Quaternion.identity);
-                newEnemy.transform.SetParent(spawnPoint);
+                GameObject newEnemy = Instantiate(enemyList[1], skySpawnPoint.position, Quaternion.identity);
+                newEnemy.transform.SetParent(skySpawnPoint);
                 spawnedEnemies.Add(newEnemy);
             }
 

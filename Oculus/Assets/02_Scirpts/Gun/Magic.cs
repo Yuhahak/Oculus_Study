@@ -59,6 +59,7 @@ public class Magic : MonoBehaviour
 
     void magicPrefabCreate(Transform firePoint)
     {
+        GameManager.instance.audioManager.Play(AudioManager.AudioType.Shoot, true);
         var magicObj = Instantiate(magicPrefab, firePoint.position, Quaternion.identity) as GameObject;
         magicObj.GetComponent<Rigidbody>().velocity = (destinattion - firePoint.position).normalized * magicSpeed;
 

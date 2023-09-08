@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class StatShop : MonoBehaviour
 {
     public GameObject Shop;
-    public GameObject mainPanel;
 
     public int shopCoin; //ÄÚÀÎ
     public Text shopCoinText;
@@ -143,7 +142,6 @@ public class StatShop : MonoBehaviour
             StatSaveData();
             DataManager.instance.SaveData();
             Shop.SetActive(false);
-            mainPanel.SetActive(true);
         }
     }
 
@@ -167,7 +165,6 @@ public class StatShop : MonoBehaviour
         if (!Shop.activeSelf)
         {
             Shop.SetActive(true);
-            mainPanel.SetActive(false);
             DataManager.instance.LoadData();
             StatLoadData();
             shopCoin = DataManager.instance.playerData.coin;
