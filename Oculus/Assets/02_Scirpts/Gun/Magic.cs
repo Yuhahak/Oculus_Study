@@ -31,7 +31,7 @@ public class Magic : MonoBehaviour
         }
     }
 
-    void MagicShootL()
+    public void MagicShootL()
     {
         Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
@@ -44,7 +44,7 @@ public class Magic : MonoBehaviour
         magicPrefabCreate(LPoint);
     }
 
-    void MagicShootR()
+    public void MagicShootR()
     {
         Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
@@ -57,7 +57,7 @@ public class Magic : MonoBehaviour
         magicPrefabCreate(RPoint);
     }
 
-    void magicPrefabCreate(Transform firePoint)
+    public void magicPrefabCreate(Transform firePoint)
     {
         GameManager.instance.audioManager.Play(AudioManager.AudioType.Shoot, true);
         var magicObj = Instantiate(magicPrefab, firePoint.position, Quaternion.identity) as GameObject;

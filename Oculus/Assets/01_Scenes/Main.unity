@@ -2084,11 +2084,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4262378877117119678, guid: 47fd8cd0d79adaa44b65124ed172e53b, type: 3}
   m_PrefabInstance: {fileID: 466954751}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &466954753 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5704004191859961035, guid: 47fd8cd0d79adaa44b65124ed172e53b, type: 3}
-  m_PrefabInstance: {fileID: 466954751}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &483759679
 GameObject:
   m_ObjectHideFlags: 0
@@ -5632,11 +5627,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4262378877117119678, guid: 47fd8cd0d79adaa44b65124ed172e53b, type: 3}
   m_PrefabInstance: {fileID: 1543154627}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1543154629 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5704004191859961035, guid: 47fd8cd0d79adaa44b65124ed172e53b, type: 3}
-  m_PrefabInstance: {fileID: 1543154627}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1567364989
 GameObject:
   m_ObjectHideFlags: 0
@@ -7323,6 +7313,7 @@ MonoBehaviour:
   grabberR: {fileID: 0}
   grabL: {fileID: 3829649642192413319}
   grabR: {fileID: 8027385895989501918}
+  Player: {fileID: 8180177450410240586}
 --- !u!1 &2455839430326839541
 GameObject:
   m_ObjectHideFlags: 0
@@ -8023,7 +8014,6 @@ GameObject:
   - component: {fileID: 8477463948254440135}
   - component: {fileID: 6781143503366016513}
   - component: {fileID: 3942198518860396323}
-  - component: {fileID: 8477463948254440136}
   - component: {fileID: 8183017746820984757}
   - component: {fileID: 6362484855942148733}
   - component: {fileID: 7678828822374997608}
@@ -8097,25 +8087,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8477463948254440136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8180177450410240586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2165cd635b456c043901552694206f9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 3931579610363716227}
-  magicPrefab: {fileID: 3103313844672430067, guid: 1e760362674847941814f31476c1dda5, type: 3}
-  LPoint: {fileID: 1543154629}
-  RPoint: {fileID: 466954753}
-  magicSpeed: 25
-  fireRate: 0.1
-  arcRange: 1
 --- !u!4 &8721364638016374781
 Transform:
   m_ObjectHideFlags: 0
