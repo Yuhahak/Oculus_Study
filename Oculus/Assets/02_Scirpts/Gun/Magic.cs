@@ -33,24 +33,28 @@ public class Magic : MonoBehaviour
 
     public void MagicShootL()
     {
-        Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
+        Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
 
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(transform.position, transform.forward, out hit)){
             destinattion = hit.point;
+        }
         else
             destinattion = ray.GetPoint(1000);
+
 
         magicPrefabCreate(LPoint);
     }
 
     public void MagicShootR()
     {
-        Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
+        Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
 
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(transform.position, transform.forward, out hit))
+        {
             destinattion = hit.point;
+        }
         else
             destinattion = ray.GetPoint(1000);
 
