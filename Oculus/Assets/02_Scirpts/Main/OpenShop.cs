@@ -23,7 +23,7 @@ public class OpenShop : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             statShop.OpenShop();
-            MouseControll.instance.unLock();
+            //MouseControll.instance.unLock();
             statShop.Shop.SetActive(true);
         }
     }
@@ -31,7 +31,7 @@ public class OpenShop : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         statShop.BackShopBtn();
-        MouseControll.instance.Lock();
+        //MouseControll.instance.Lock();
         statShop.Shop.SetActive(false);
     }
 }

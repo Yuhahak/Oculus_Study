@@ -23,15 +23,18 @@ public class PlayerSkill : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+    }
+
+    public void OnSkill()
+    {
+        if (!isSkill)
         {
-            if(!isSkill)
-            {
-                StartCoroutine(SkillTimeCheck(0));
-                GameManager.instance.audioManager.Play(AudioManager.AudioType.SnowAoe, true);
-            }
+            StartCoroutine(SkillTimeCheck(0));
+            GameManager.instance.audioManager.Play(AudioManager.AudioType.SnowAoe, true);
         }
     }
+
+
 
     IEnumerator SkillTimeCheck(int SkillNum)
     {

@@ -17,6 +17,7 @@ public class OculusCon : MonoBehaviour
     public GameObject grabR;
 
     public GameObject Player;
+    public PlayerSkill skill;
 
 
     // Start is called before the first frame update
@@ -38,6 +39,12 @@ public class OculusCon : MonoBehaviour
         if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
         {
             Player.GetComponent<SS_Gun>().FireL();
+        }
+
+        if (OVRInput.GetDown(OVRInput.Button.One))
+        {
+            skill.OnSkill();
+
         }
 
 
