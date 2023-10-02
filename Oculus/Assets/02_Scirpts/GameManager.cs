@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public Player player;
-    public Effect effect;
     public AudioManager audioManager;
     public static GameManager instance;
 
@@ -75,7 +74,6 @@ public class GameManager : MonoBehaviour
             DataManager.instance.SaveData();
             yield return new WaitForSeconds(1f);
             SceneManager.LoadScene("Main");
-            MouseControll.instance.unLock();
 
     }
 
@@ -88,7 +86,7 @@ public class GameManager : MonoBehaviour
             player = playerObject.GetComponent<Player>();
         }
 
-        GameObject coin_textObj = GameObject.Find("Coin_text");
+        GameObject coin_textObj = GameObject.Find("CoinText");
         if (coin_textObj != null)
         {
             coin_Text = coin_textObj.GetComponent<Text>();

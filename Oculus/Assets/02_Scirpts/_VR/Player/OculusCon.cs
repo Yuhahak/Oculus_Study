@@ -23,13 +23,19 @@ public class OculusCon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
 
+
+        GameObject skillObject = GameObject.Find("PlayerManager");
+        if (skillObject != null)
+        {
+            skill = skillObject.GetComponent<PlayerSkill>();
+        }
 
         if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))  //오른손 트리거를 눌렀을 때
         {

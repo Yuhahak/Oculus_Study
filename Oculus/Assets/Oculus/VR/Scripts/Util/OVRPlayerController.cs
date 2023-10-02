@@ -27,6 +27,8 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class OVRPlayerController : MonoBehaviour
 {
+	public static OVRPlayerController instance;
+
 	/// <summary>
 	/// The rate acceleration during movement.
 	/// </summary>
@@ -178,7 +180,7 @@ public class OVRPlayerController : MonoBehaviour
 	void Awake()
 	{
 		Controller = gameObject.GetComponent<CharacterController>();
-
+		instance = this;
 		if (Controller == null)
 			Debug.LogWarning("OVRPlayerController: No CharacterController attached.");
 

@@ -23,6 +23,7 @@ public class PlayerSkill : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        player = GameObject.Find("OVRPlayerController");
     }
 
     public void OnSkill()

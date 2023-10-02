@@ -5852,8 +5852,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 140325361}
-  effect: {fileID: 1318597572}
-  audioManager: {fileID: 1302427346}
+  audioManager: {fileID: 273189587}
   coin: 0
   coin_Text: {fileID: 1812583933}
   SS: 0
@@ -6255,8 +6254,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpUp: 0
-  hpTimeHeal: 1
-  damageUp: 2
+  hpTimeHeal: 0
+  damageUp: 0
   moveSpeedUp: 0
 --- !u!4 &1983416290
 Transform:

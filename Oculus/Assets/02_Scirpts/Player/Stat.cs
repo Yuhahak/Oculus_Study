@@ -49,7 +49,7 @@ public class Stat : MonoBehaviour
 
     public void MoveSpeedUp()
     {
-        //vr개발할때 추가
+        OVRPlayerController.instance.Acceleration += 0.1f * moveSpeedUp;
     }
 
     void DataLoad()
@@ -66,5 +66,6 @@ public class Stat : MonoBehaviour
         yield return new WaitForEndOfFrame();
         HpUp();
         DamagedUp();
+        MoveSpeedUp();
     }
 }

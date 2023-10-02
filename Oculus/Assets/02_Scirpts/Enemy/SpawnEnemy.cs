@@ -37,18 +37,18 @@ public class SpawnEnemy : MonoBehaviour
             Transform spawnPoint = spawnPos[Random.Range(0, 4)];
             Transform skySpawnPoint = skySpawnPos[Random.Range(0, 4)];
 
-            if (timer <= 10)
+            if (timer <= 200)
             {
                 GameObject newEnemy = Instantiate(enemyList[0], spawnPoint.position, Quaternion.identity);
                 newEnemy.transform.SetParent(spawnPoint);
                 spawnedEnemies.Add(newEnemy);
             }
-            else
-            {
-                GameObject newEnemy = Instantiate(enemyList[1], skySpawnPoint.position, Quaternion.identity);
-                newEnemy.transform.SetParent(skySpawnPoint);
-                spawnedEnemies.Add(newEnemy);
-            }
+            //else
+            //{
+            //    GameObject newEnemy = Instantiate(enemyList[1], skySpawnPoint.position, Quaternion.identity);
+            //    newEnemy.transform.SetParent(skySpawnPoint);
+            //    spawnedEnemies.Add(newEnemy);
+            //}
 
         }
     }
