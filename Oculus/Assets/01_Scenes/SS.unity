@@ -816,10 +816,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd29223c7ecd2a459498515b8667013, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 6080609771806940713, guid: 222b88fe8408c6541a4ff0aa1511d86a, type: 3}
+  bulletPrefab: {fileID: 3516258100469755168, guid: e53a07545240ea241baf73b0731db6d2, type: 3}
   bulletSpawnL: {fileID: 1131133901}
   bulletSpawnR: {fileID: 676769043}
-  bulletSpeed: 20
+  bulletSpeed: 50
   fireRate: 0.5
 --- !u!1 &152154053
 GameObject:
@@ -6465,15 +6465,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2060743890}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecd29223c7ecd2a459498515b8667013, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 3103313844672430067, guid: 1e760362674847941814f31476c1dda5, type: 3}
-  bulletSpawnL: {fileID: 0}
-  bulletSpawnR: {fileID: 0}
-  bulletSpeed: 400
+  bulletPrefab: {fileID: 3516258100469755168, guid: e53a07545240ea241baf73b0731db6d2, type: 3}
+  bulletSpawnL: {fileID: 30188093}
+  bulletSpawnR: {fileID: 30188093}
+  bulletSpeed: 50
   fireRate: 0.1
 --- !u!114 &2060743895
 MonoBehaviour:
@@ -6482,7 +6482,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2060743890}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2165cd635b456c043901552694206f9e, type: 3}
   m_Name: 

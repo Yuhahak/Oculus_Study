@@ -13,7 +13,10 @@ public class SS_Gun : MonoBehaviour
 
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            FireL();
+        }
     }
 
     public void FireL()

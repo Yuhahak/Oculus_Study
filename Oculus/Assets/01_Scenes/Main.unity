@@ -5814,7 +5814,6 @@ GameObject:
   - component: {fileID: 770909962}
   - component: {fileID: 770909961}
   - component: {fileID: 770909960}
-  - component: {fileID: 770909959}
   - component: {fileID: 770909958}
   - component: {fileID: 770909957}
   - component: {fileID: 770909956}
@@ -5902,22 +5901,6 @@ MonoBehaviour:
   EnableLinearMovement: 1
   EnableRotation: 1
   RotationEitherThumbstick: 0
---- !u!114 &770909959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 770909954}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b3057413d2135a47b0e5fd40d959d90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHp: 0
-  hp: 1000
-  moveSpeed: 10
-  damage: 5
 --- !u!114 &770909960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5930,7 +5913,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd29223c7ecd2a459498515b8667013, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 6080609771806940713, guid: 222b88fe8408c6541a4ff0aa1511d86a, type: 3}
+  bulletPrefab: {fileID: 3516258100469755168, guid: e53a07545240ea241baf73b0731db6d2, type: 3}
   bulletSpawnL: {fileID: 1661152136}
   bulletSpawnR: {fileID: 223731676}
   bulletSpeed: 20
