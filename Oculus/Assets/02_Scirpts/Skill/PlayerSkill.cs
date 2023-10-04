@@ -23,7 +23,13 @@ public class PlayerSkill : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        player = GameObject.Find("OVRPlayerController");
+        //player = GameObject.Find("OVRPlayerController");
+
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            OnSkill();
+        }
     }
 
     public void OnSkill()
@@ -33,6 +39,7 @@ public class PlayerSkill : MonoBehaviour
             StartCoroutine(SkillTimeCheck(0));
             GameManager.instance.audioManager.Play(AudioManager.AudioType.SnowAoe, true);
         }
+
     }
 
 

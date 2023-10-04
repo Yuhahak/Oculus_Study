@@ -362,7 +362,7 @@ Transform:
   - {fileID: 8447111904938864448}
   - {fileID: 7404018315197193396}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5358942327753126254
 MeshFilter:
@@ -503,3 +503,4 @@ MonoBehaviour:
   target: {fileID: 0}
   enemy_HpBar: {fileID: 6779253756135090741}
   enemy_HpBar_Back: {fileID: 7309301170152057177}
+  pushForce: 40

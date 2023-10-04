@@ -17,6 +17,7 @@ public class EnemyOne : EnemyBase
     private float maxHp;
     private float currentHp; // 새로운 변수 추가
     private bool isDead = false;
+    public float pushForce;
 
     private void Start()
     {
@@ -54,10 +55,37 @@ public class EnemyOne : EnemyBase
         }
     }
 
-    
+
     public void EnemyTakeDamage(float BulletDamage)
     {
+        if (this == null)
+        {
+            return; // 스크립트가 이미 파괴된 경우 아무 작업도 하지 않음
+        }
+
+
+        // 뒤로 밀리는 힘을 추가
+        Vector3 pushDirection = (transform.position - player.transform.position).normalized;
+        rigid.AddForce(pushDirection * pushForce, ForceMode.Impulse);
+
+        // 몬스터의 색깔을 하얗게 변하게 함
+        StartCoroutine(FlashColor(0.2f));
+
+        // 현재 체력 감소
         currentHp -= (player.damage + BulletDamage);
+    }
+
+    private IEnumerator FlashColor(float duration)
+    {
+        // 몬스터 색깔을 하얗게 변하게 함
+        Color originalColor = GetComponent<Renderer>().material.color;
+        GetComponent<Renderer>().material.color = Color.white;
+
+        // 대기 시간
+        yield return new WaitForSeconds(duration);
+
+        // 원래 색깔로 돌아감
+        GetComponent<Renderer>().material.color = originalColor;
     }
 
     void FreezeVelocity()
