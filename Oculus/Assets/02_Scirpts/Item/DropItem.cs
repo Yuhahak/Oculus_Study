@@ -6,6 +6,8 @@ public class DropItem : MonoBehaviour
 {
     public List<GameObject> DropItemList = new List<GameObject>();
 
+    public GameObject deathEffect;
+
 
     public static DropItem instance;
 
@@ -28,5 +30,11 @@ public class DropItem : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    public void EnemyDeathEffect(Vector3 position)
+    {
+        GameObject effectInstance = Instantiate(deathEffect, position, Quaternion.identity);
+        Destroy(effectInstance, 1.0f);
     }
 }

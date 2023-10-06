@@ -504,3 +504,4 @@ MonoBehaviour:
   enemy_HpBar: {fileID: 6779253756135090741}
   enemy_HpBar_Back: {fileID: 7309301170152057177}
   pushForce: 40
+  DeathEffect: {fileID: 2944396702758532163, guid: 45565a84ee86a124aba178fd034ee313, type: 3}

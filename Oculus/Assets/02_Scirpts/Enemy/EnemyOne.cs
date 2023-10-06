@@ -99,6 +99,7 @@ public class EnemyOne : EnemyBase
     {
         isDead = true;
         gameObject.GetComponent<BoxCollider>().enabled = false;
+        DropItem.instance.EnemyDeathEffect(new Vector3(transform.position.x, transform.position.y, transform.position.z));
         DropItem.instance.RandomItemDrop(new Vector3(transform.position.x, transform.position.y - 0.4f, transform.position.z));
         Destroy(gameObject);
     }

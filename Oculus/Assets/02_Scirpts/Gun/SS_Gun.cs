@@ -15,6 +15,7 @@ public class SS_Gun : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
+        GameManager.instance.audioManager.Play(AudioManager.AudioType.Shoot, true);
             FireL();
         }
     }

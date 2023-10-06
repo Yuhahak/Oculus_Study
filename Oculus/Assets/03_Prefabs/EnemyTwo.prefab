@@ -362,7 +362,7 @@ Transform:
   - {fileID: 1899671394424859549}
   - {fileID: 312656899513597862}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1094032949332819759
 MeshFilter:
@@ -460,8 +460,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1.0143099, z: 1}
+  m_Center: {x: 0, y: -0.0071559204, z: 0}
 --- !u!195 &2283374516118204624
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -470,7 +470,7 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8109312627920196827}
   m_Enabled: 1
-  m_AgentTypeID: 0
+  m_AgentTypeID: -334000983
   m_Radius: 0.5
   m_Speed: 3.5
   m_Acceleration: 35
@@ -503,3 +503,4 @@ MonoBehaviour:
   target: {fileID: 0}
   enemy_HpBar: {fileID: 6404135060850647145}
   enemy_HpBar_Back: {fileID: 7055965862173969677}
+  pushForce: 0
