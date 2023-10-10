@@ -392,7 +392,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: eaf3f3c3bd5471e478b51de7a306c9fb, type: 2}
+  - {fileID: 5538782440495211882, guid: 45951abd0a6debf43a31c3e172b1f752, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -504,4 +504,3 @@ MonoBehaviour:
   enemy_HpBar: {fileID: 6779253756135090741}
   enemy_HpBar_Back: {fileID: 7309301170152057177}
   pushForce: 40
-  DeathEffect: {fileID: 2944396702758532163, guid: 45565a84ee86a124aba178fd034ee313, type: 3}

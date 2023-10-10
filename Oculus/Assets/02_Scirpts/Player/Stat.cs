@@ -49,7 +49,7 @@ public class Stat : MonoBehaviour
 
     public void MoveSpeedUp()
     {
-        //OVRPlayerController.instance.Acceleration += 0.1f * moveSpeedUp;
+        OVRPlayerController.instance.Acceleration += 0.1f * moveSpeedUp;
     }
 
     void DataLoad()
