@@ -17,7 +17,7 @@ MonoBehaviour:
     serializedVersion: 2
     key0: {r: 0, g: 0.85213137, b: 1, a: 0.09803922}
     key1: {r: 1, g: 0.99326676, b: 0.5707547, a: 1}
-    key2: {r: 0, g: 0, b: 0, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
@@ -45,7 +45,7 @@ MonoBehaviour:
     m_NumAlphaKeys: 3
   near: 27
   far: 150
-  distanceFogIntensity: 0.694
+  distanceFogIntensity: 0
   useDistanceFogOnSky: 1
   useHeight: 1
   heightGradient:
@@ -80,9 +80,8 @@ MonoBehaviour:
     m_NumAlphaKeys: 3
   low: 0
   high: 35
-  heightFogIntensity: 0.631
+  heightFogIntensity: 0
   useHeightFogOnSky: 1
-  cameraRelativePosition: 0
   distanceHeightBlend: 0.251
   renderEvent: 550
   applyInSceneView: 1
