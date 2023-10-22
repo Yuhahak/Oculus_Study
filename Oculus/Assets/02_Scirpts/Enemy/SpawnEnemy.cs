@@ -16,8 +16,6 @@ public class SpawnEnemy : MonoBehaviour
     public int timer = 0;
     private float spawnCount = 1f;
 
-   
-
     // Start is called before the first frame update
     void Start()
     {
@@ -37,12 +35,11 @@ public class SpawnEnemy : MonoBehaviour
         {
             yield return new WaitForSeconds(spawnCount);
             Transform spawnPoint = spawnPos[Random.Range(0, 4)];
-            int spawnNum1 = Random.Range(0, 2);
+            Transform skySpawnPoint = skySpawnPos[Random.Range(0, 4)];
 
             if (timer <= 200)
             {
-                GameObject newEnemy = Instantiate(enemyList[spawnNum1], spawnPoint.position, Quaternion.identity);
-                newEnemy.GetComponent<EnemyOne>().MonsterRandomAnim();
+                GameObject newEnemy = Instantiate(enemyList[0], spawnPoint.position, Quaternion.identity);
                 newEnemy.transform.SetParent(spawnPoint);
                 spawnedEnemies.Add(newEnemy);
             }
