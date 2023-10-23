@@ -453,6 +453,8 @@ MonoBehaviour:
   enemy_HpBar: {fileID: 6779253756135090741}
   enemy_HpBar_Back: {fileID: 7309301170152057177}
   pushForce: 40
+  monsterAnim: {fileID: 303840641173707778}
+  rnd: 0
 --- !u!1001 &6253963938867863999
 PrefabInstance:
   m_ObjectHideFlags: 0

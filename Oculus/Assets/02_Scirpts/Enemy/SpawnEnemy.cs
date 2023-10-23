@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class SpawnEnemy : MonoBehaviour
 {
     public Transform[] spawnPos;
-    public Transform[] skySpawnPos;
     public List<GameObject> enemyList = new List<GameObject>();
     private List<GameObject> spawnedEnemies = new List<GameObject>();
 
