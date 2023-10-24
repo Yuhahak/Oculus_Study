@@ -72,7 +72,7 @@ public class EnemyOne : EnemyBase
         rigid.AddForce(pushDirection * pushForce, ForceMode.Impulse);
 
         // 몬스터의 색깔을 하얗게 변하게 함
-        StartCoroutine(FlashColor(0.2f));
+        //StartCoroutine(FlashColor(0.2f));
 
         // 현재 체력 감소
         currentHp -= (player.damage + BulletDamage);
