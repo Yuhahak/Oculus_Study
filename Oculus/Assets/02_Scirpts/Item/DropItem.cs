@@ -7,7 +7,8 @@ public class DropItem : MonoBehaviour
     public List<GameObject> DropItemList = new List<GameObject>();
 
     public GameObject deathEffect;
-
+    public GameObject bossDeathEffect;
+    public GameObject endingPotal;
 
     public static DropItem instance;
 
@@ -36,5 +37,13 @@ public class DropItem : MonoBehaviour
     {
         GameObject effectInstance = Instantiate(deathEffect, position, Quaternion.identity);
         Destroy(effectInstance, 1.0f);
+    }
+
+
+    public void BossDeathEffect(Vector3 position)
+    {
+        GameObject effectInstance = Instantiate(bossDeathEffect, position, Quaternion.identity);
+        Instantiate(endingPotal, position, Quaternion.identity);
+        Destroy(effectInstance, 2.0f);
     }
 }

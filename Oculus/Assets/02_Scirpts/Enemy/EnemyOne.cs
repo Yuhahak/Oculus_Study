@@ -55,6 +55,10 @@ public class EnemyOne : EnemyBase
         if (currentHp <= 0f && !isDead)
         {
             EnemyDeath();
+            if (gameObject.name == "Enemy_5")
+            {
+                DropItem.instance.BossDeathEffect(new Vector3(transform.position.x, transform.position.y, transform.position.z));
+            }
         }
     }
 
