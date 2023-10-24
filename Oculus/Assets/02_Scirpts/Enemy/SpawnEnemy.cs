@@ -35,12 +35,12 @@ public class SpawnEnemy : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(spawnCount);
-            Transform spawnPoint = spawnPos[Random.Range(0, 4)];
+            Transform spawnPoint = spawnPos[Random.Range(0, 7)];
             int spawnNum1 = Random.Range(0, 2);
 
             if (timer <= 200)
             {
-                GameObject newEnemy = Instantiate(enemyList[spawnNum1], spawnPoint.position, Quaternion.identity);
+                GameObject newEnemy = Instantiate(enemyList[0], spawnPoint.position, Quaternion.identity);
                 newEnemy.GetComponent<EnemyOne>().MonsterRandomAnim();
                 newEnemy.transform.SetParent(spawnPoint);
                 spawnedEnemies.Add(newEnemy);

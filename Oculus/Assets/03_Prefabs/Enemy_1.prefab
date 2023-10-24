@@ -338,6 +338,7 @@ GameObject:
   - component: {fileID: 4633822035518729283}
   - component: {fileID: 6071242904916931530}
   - component: {fileID: 58259265675977163}
+  - component: {fileID: 7906364004011587733}
   m_Layer: 10
   m_Name: Enemy_1
   m_TagString: Enemy
@@ -354,7 +355,7 @@ Transform:
   m_GameObject: {fileID: 8331383602404044958}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.03, y: 0.7, z: 6.92}
-  m_LocalScale: {x: 1.0235764, y: 1.3129576, z: 1}
+  m_LocalScale: {x: 2, y: 2.5654318, z: 1.9539334}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8447111904938864448}
@@ -452,8 +453,24 @@ MonoBehaviour:
   target: {fileID: 0}
   enemy_HpBar: {fileID: 6779253756135090741}
   enemy_HpBar_Back: {fileID: 7309301170152057177}
+  currentHp: 0
+  isDead: 0
   pushForce: 40
   monsterAnim: {fileID: 4786419105559451399}
+  rnd: 0
+--- !u!114 &7906364004011587733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8331383602404044958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 657d619aaf078f645b0b1915f4eefc89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clone: {fileID: 8331383602404044958}
 --- !u!1001 &2471987078718464246
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -513,6 +530,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: e2b00397ef26994418683a768f74f601, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e2b00397ef26994418683a768f74f601, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: e2b00397ef26994418683a768f74f601, type: 3}
       propertyPath: m_Materials.Array.data[0]

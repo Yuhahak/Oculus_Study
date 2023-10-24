@@ -15,8 +15,8 @@ public class EnemyOne : EnemyBase
     public Image enemy_HpBar;
     public Image enemy_HpBar_Back;
     private float maxHp;
-    private float currentHp; // 새로운 변수 추가
-    private bool isDead = false;
+    public float currentHp; // 새로운 변수 추가
+    public bool isDead = false;
     public float pushForce;
 
     public Animator monsterAnim;
@@ -34,7 +34,7 @@ public class EnemyOne : EnemyBase
         }
     }
 
-    // Start is called before the first frame update
+
     void Awake()
     {
         nav = GetComponent<NavMeshAgent>();
@@ -42,7 +42,7 @@ public class EnemyOne : EnemyBase
         EnemyOne.instance = this;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         nav.SetDestination(target.position);

@@ -339,6 +339,7 @@ namespace UnityStandardAssets.ImageEffects
             Graphics.Blit (from, to, brightPassFilterMaterial, 1);
         }
 
+        [Obsolete]
         private void Vignette (float amount, RenderTexture from, RenderTexture to)
         {
             if (lensFlareVignetteMask)
