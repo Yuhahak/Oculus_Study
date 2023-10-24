@@ -76,6 +76,11 @@ public class EnemyOne : EnemyBase
 
         // 현재 체력 감소
         currentHp -= (player.damage + BulletDamage);
+
+        if(gameObject.name == "Enemy_1(Clone)")
+        {
+            SlimeSmaller();
+        }
     }
 
     private IEnumerator FlashColor(float duration)
@@ -116,8 +121,22 @@ public class EnemyOne : EnemyBase
 
     public void MonsterRandomAnim()
     {
-        rnd = Random.Range(0f, 1.0f);
-        monsterAnim.SetFloat("Offset", rnd);
+        if (monsterAnim)
+        {
+            rnd = Random.Range(0f, 1.0f);
+            monsterAnim.SetFloat("Offset", rnd);
+        }
+        else
+        {
+            return;
+        }
+
     }
 
+    void SlimeSmaller()
+    {
+        GameObject clone = gameObject;
+        clone.transform.position = transform.position;
+        clone.transform.localScale = transform.localScale * 0.85f;
+    }
 }

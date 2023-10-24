@@ -450,6 +450,7 @@ MonoBehaviour:
   enemy_Hp: 20
   enemy_MoveSpeed: 5
   enemy_Damage: 1
+  nav: {fileID: 6071242904916931530}
   target: {fileID: 0}
   enemy_HpBar: {fileID: 6779253756135090741}
   enemy_HpBar_Back: {fileID: 7309301170152057177}
