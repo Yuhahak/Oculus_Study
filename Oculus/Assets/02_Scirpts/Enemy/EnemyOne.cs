@@ -8,7 +8,7 @@ public class EnemyOne : EnemyBase
 {
     public static EnemyOne instance;
     private Rigidbody rigid;
-    NavMeshAgent nav;
+    public NavMeshAgent nav;
 
     [Header("Setting")]
     public Transform target;

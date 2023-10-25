@@ -8,8 +8,9 @@ public class Boss : MonoBehaviour
 
     public GameObject slash;
     public GameObject jumpSkill;
+    public GameObject fire;
 
-
+    private float a;
     private void Awake()
     {
         instacne = this;
@@ -19,6 +20,7 @@ public class Boss : MonoBehaviour
     {
         InvokeRepeating("onSlash", 1f, 3f);
         InvokeRepeating("onJump", 5f, 10f);
+        InvokeRepeating("onFire", 8f, 10f);
     }
 
     void onSlash()
@@ -41,6 +43,20 @@ public class Boss : MonoBehaviour
     void offJump()
     {
         jumpSkill.SetActive(false);
+    }
+
+    void onFire()
+    {
+        fire.SetActive(true);
+        a = EnemyOne.instance.nav.speed;
+        EnemyOne.instance.nav.speed = 0f;
+        Invoke("offFire", 5f);
+    }
+
+    void offFire()
+    {
+        fire.SetActive(false);
+        EnemyOne.instance.nav.speed = a;
     }
 
 }
