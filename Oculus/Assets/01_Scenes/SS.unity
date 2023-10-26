@@ -2815,9 +2815,9 @@ MonoBehaviour:
   - {fileID: 1099520022}
   BossPos: {fileID: 1153839653}
   enemyList:
+  - {fileID: 8331383602404044958, guid: 3deb288ee1705444f8ce02118f165bc4, type: 3}
   - {fileID: 8331383602404044958, guid: 7835354f641e40740bfc3690d3d70759, type: 3}
   - {fileID: 8331383602404044958, guid: 804f475cf3950174297a74c5fc76cec5, type: 3}
-  - {fileID: 8331383602404044958, guid: 3deb288ee1705444f8ce02118f165bc4, type: 3}
   - {fileID: 8331383602404044958, guid: e7f0b6d4ca91e7241a5d5a3f1f259154, type: 3}
   - {fileID: 8331383602404044958, guid: 28f96aabd620a44488985fde7a660e53, type: 3}
   timerText: {fileID: 130797842}
