@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class SpawnEnemy : MonoBehaviour
 {
     public Transform[] spawnPos;
+    public Transform BossPos;
     public List<GameObject> enemyList = new List<GameObject>();
     private List<GameObject> spawnedEnemies = new List<GameObject>();
 
@@ -24,11 +25,6 @@ public class SpawnEnemy : MonoBehaviour
         StartCoroutine(TimerCoroution());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     IEnumerator SpawnEnemy_()
     {
@@ -37,20 +33,76 @@ public class SpawnEnemy : MonoBehaviour
             yield return new WaitForSeconds(spawnCount);
             Transform spawnPoint = spawnPos[Random.Range(0, 7)];
             int spawnNum1 = Random.Range(0, 2);
+            int spawnNum2 = Random.Range(1, 3);
+            int spawnNum3 = Random.Range(0, 4);
 
-            if (timer <= 200)
+            if (timer <= 30)
             {
                 GameObject newEnemy = Instantiate(enemyList[0], spawnPoint.position, Quaternion.identity);
                 newEnemy.GetComponent<EnemyOne>().MonsterRandomAnim();
                 newEnemy.transform.SetParent(spawnPoint);
                 spawnedEnemies.Add(newEnemy);
             }
-            //else
-            //{
-            //    GameObject newEnemy = Instantiate(enemyList[1], skySpawnPoint.position, Quaternion.identity);
-            //    newEnemy.transform.SetParent(skySpawnPoint);
-            //    spawnedEnemies.Add(newEnemy);
-            //}
+            else if (timer > 30 && timer <= 45)
+            {
+                GameObject newEnemy = Instantiate(enemyList[spawnNum1], spawnPoint.position, Quaternion.identity);
+                newEnemy.GetComponent<EnemyOne>().MonsterRandomAnim();
+                newEnemy.transform.SetParent(spawnPoint);
+                spawnedEnemies.Add(newEnemy);
+            }
+            else if (timer > 45 && timer <= 60)
+            {
+                GameObject newEnemy = Instantiate(enemyList[1], spawnPoint.position, Quaternion.identity);
+                newEnemy.GetComponent<EnemyOne>().MonsterRandomAnim();
+                newEnemy.transform.SetParent(spawnPoint);
+                spawnedEnemies.Add(newEnemy);
+            }
+            else if (timer > 60 && timer <= 75)
+            {
+                GameObject newEnemy = Instantiate(enemyList[spawnNum2], spawnPoint.position, Quaternion.identity);
+                newEnemy.GetComponent<EnemyOne>().MonsterRandomAnim();
+                newEnemy.transform.SetParent(spawnPoint);
+                spawnedEnemies.Add(newEnemy);
+            }
+            else if (timer > 75 && timer <= 90)
+            {
+                GameObject newEnemy = Instantiate(enemyList[2], spawnPoint.position, Quaternion.identity);
+                newEnemy.GetComponent<EnemyOne>().MonsterRandomAnim();
+                newEnemy.transform.SetParent(spawnPoint);
+                spawnedEnemies.Add(newEnemy);
+            }
+            else if (timer > 90 && timer <= 105)
+            {
+                GameObject newEnemy = Instantiate(enemyList[spawnNum3], spawnPoint.position, Quaternion.identity);
+                newEnemy.GetComponent<EnemyOne>().MonsterRandomAnim();
+                newEnemy.transform.SetParent(spawnPoint);
+                spawnedEnemies.Add(newEnemy);
+            }
+            else if (timer > 105 && timer <= 120)
+            {
+                GameObject newEnemy = Instantiate(enemyList[3], spawnPoint.position, Quaternion.identity);
+                newEnemy.GetComponent<EnemyOne>().MonsterRandomAnim();
+                newEnemy.transform.SetParent(spawnPoint);
+                spawnedEnemies.Add(newEnemy);
+            }
+            else if (timer > 120 && timer <= 180)
+            {
+                spawnCount = 0.5f;
+                GameObject newEnemy = Instantiate(enemyList[spawnNum3], spawnPoint.position, Quaternion.identity);
+                newEnemy.GetComponent<EnemyOne>().MonsterRandomAnim();
+                newEnemy.transform.SetParent(spawnPoint);
+                spawnedEnemies.Add(newEnemy);
+            }
+            else if (timer > 180)
+            {
+                spawnCount = 300f;
+                GameObject newEnemy = Instantiate(enemyList[4], BossPos.position, Quaternion.identity);
+                newEnemy.GetComponent<EnemyOne>().MonsterRandomAnim();
+                newEnemy.transform.SetParent(BossPos);
+                spawnedEnemies.Add(newEnemy);
+                StopCoroutine(SpawnEnemy_());
+            }
+        
 
         }
     }

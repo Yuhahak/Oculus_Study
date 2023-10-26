@@ -5214,6 +5214,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootSound: {fileID: 1310742981}
   snowAoeSound: {fileID: 556183944}
+  shopOpen: {fileID: 0}
+  shopClose: {fileID: 0}
+  statUp: {fileID: 0}
+  statReset: {fileID: 0}
+  monsterDamage: {fileID: 0}
+  monsterDeath: {fileID: 0}
+  heal: {fileID: 0}
+  getCoin: {fileID: 0}
+  smash: {fileID: 0}
+  explosion: {fileID: 0}
+  fire: {fileID: 0}
 --- !u!1 &679681104
 GameObject:
   m_ObjectHideFlags: 0
@@ -13023,6 +13034,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootSound: {fileID: 1486977273}
   snowAoeSound: {fileID: 1007793043}
+  shopOpen: {fileID: 0}
+  shopClose: {fileID: 0}
+  statUp: {fileID: 0}
+  statReset: {fileID: 0}
+  monsterDamage: {fileID: 0}
+  monsterDeath: {fileID: 0}
+  heal: {fileID: 0}
+  getCoin: {fileID: 0}
+  smash: {fileID: 0}
+  explosion: {fileID: 0}
+  fire: {fileID: 0}
 --- !u!1 &1580184659
 GameObject:
   m_ObjectHideFlags: 0
@@ -13455,7 +13477,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1615856193}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.8, z: -9.3}
+  m_LocalPosition: {x: 0, y: 1.8, z: -15.38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

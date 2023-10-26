@@ -55,7 +55,7 @@ public class EnemyOne : EnemyBase
         if (currentHp <= 0f && !isDead)
         {
             EnemyDeath();
-            if (gameObject.name == "Enemy_5")
+            if (gameObject.name == "Enemy_5(Clone)")
             {
                 DropItem.instance.BossDeathEffect(new Vector3(transform.position.x, transform.position.y, transform.position.z));
             }
@@ -74,7 +74,7 @@ public class EnemyOne : EnemyBase
         // 뒤로 밀리는 힘을 추가
         Vector3 pushDirection = (transform.position - player.transform.position).normalized;
         rigid.AddForce(pushDirection * pushForce, ForceMode.Impulse);
-
+        GameManager.instance.audioManager.Play(AudioManager.AudioType.MonsterDamage, true);
         // 몬스터의 색깔을 하얗게 변하게 함
         //StartCoroutine(FlashColor(0.2f));
 
@@ -113,6 +113,7 @@ public class EnemyOne : EnemyBase
         gameObject.GetComponent<BoxCollider>().enabled = false;
         DropItem.instance.EnemyDeathEffect(new Vector3(transform.position.x, transform.position.y, transform.position.z));
         DropItem.instance.RandomItemDrop(new Vector3(transform.position.x, transform.position.y - 0.4f, transform.position.z));
+        GameManager.instance.audioManager.Play(AudioManager.AudioType.MonsterDeath, true);
         Destroy(gameObject);
     }
 

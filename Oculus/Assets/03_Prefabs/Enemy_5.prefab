@@ -365,7 +365,7 @@ Transform:
   - {fileID: 5903006534175886926}
   - {fileID: 578951682424223810}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &5645558812421323367
 Rigidbody:
@@ -451,7 +451,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   enemy_Hp: 200
-  enemy_MoveSpeed: 3.5
+  enemy_MoveSpeed: 12.5
   enemy_Damage: 20
   nav: {fileID: 0}
   target: {fileID: 0}
@@ -845,19 +845,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8838929524904102464, guid: 4b492aeb32e5e314bb151959dd16bdb4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.05
+      value: 1.044
       objectReference: {fileID: 0}
     - target: {fileID: 8838929524904102464, guid: 4b492aeb32e5e314bb151959dd16bdb4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.51
+      value: 0.43
       objectReference: {fileID: 0}
     - target: {fileID: 8838929524904102464, guid: 4b492aeb32e5e314bb151959dd16bdb4, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9264525
+      value: 0.9807461
       objectReference: {fileID: 0}
     - target: {fileID: 8838929524904102464, guid: 4b492aeb32e5e314bb151959dd16bdb4, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.37641168
+      value: 0.19528718
       objectReference: {fileID: 0}
     - target: {fileID: 8838929524904102464, guid: 4b492aeb32e5e314bb151959dd16bdb4, type: 3}
       propertyPath: m_LocalRotation.y
@@ -869,7 +869,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8838929524904102464, guid: 4b492aeb32e5e314bb151959dd16bdb4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 44.223
+      value: 22.523
       objectReference: {fileID: 0}
     - target: {fileID: 8838929524904102464, guid: 4b492aeb32e5e314bb151959dd16bdb4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -940,4 +940,4 @@ MonoBehaviour:
   player: {fileID: 0}
   enemy_Hp: 0
   enemy_MoveSpeed: 0
-  enemy_Damage: 3
+  enemy_Damage: 1.5

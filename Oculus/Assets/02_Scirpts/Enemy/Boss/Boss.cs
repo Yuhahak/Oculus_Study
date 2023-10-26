@@ -26,6 +26,7 @@ public class Boss : MonoBehaviour
     void onSlash()
     {
         slash.SetActive(true);
+        GameManager.instance.audioManager.Play(AudioManager.AudioType.Smash, true);
         Invoke("offSlash", 0.7f);
     }
 
@@ -37,6 +38,7 @@ public class Boss : MonoBehaviour
     void onJump()
     {
         jumpSkill.SetActive(true);
+        GameManager.instance.audioManager.Play(AudioManager.AudioType.Explosion, true);
         Invoke("offJump", 2f);
     }
 
@@ -50,6 +52,7 @@ public class Boss : MonoBehaviour
         fire.SetActive(true);
         a = EnemyOne.instance.nav.speed;
         EnemyOne.instance.nav.speed = 0f;
+        GameManager.instance.audioManager.Play(AudioManager.AudioType.Fire, true);
         Invoke("offFire", 5f);
     }
 
