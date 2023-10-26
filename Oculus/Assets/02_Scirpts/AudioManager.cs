@@ -8,11 +8,15 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] AudioSource shootSound = null;
     [SerializeField] AudioSource snowAoeSound = null;
+    [SerializeField] AudioSource shopOpen = null;
+    [SerializeField] AudioSource shopClose = null;
+    [SerializeField] AudioSource statUp = null;
+    [SerializeField] AudioSource statReset = null;
 
 
     public enum AudioType
     {
-        Shoot, SnowAoe
+        Shoot, SnowAoe, ShopOpen, ShopClose, StatUp, StatReset
     }
 
 
@@ -26,6 +30,18 @@ public class AudioManager : MonoBehaviour
                 break;
             case AudioType.SnowAoe:
                 audioSource = snowAoeSound;
+                break;
+            case AudioType.ShopOpen:
+                audioSource = shopOpen;
+                break;
+            case AudioType.ShopClose:
+                audioSource = shopClose;
+                break;
+            case AudioType.StatUp:
+                audioSource = statUp;
+                break;
+            case AudioType.StatReset:
+                audioSource = statReset;
                 break;
         }
         if (audioSource != null)

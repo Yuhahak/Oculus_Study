@@ -248,7 +248,7 @@ MonoBehaviour:
   player: {fileID: 0}
   enemy_Hp: 0
   enemy_MoveSpeed: 0
-  enemy_Damage: 2
+  enemy_Damage: 0
 --- !u!1 &8066901466429184224
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,7 +365,7 @@ Transform:
   - {fileID: 5903006534175886926}
   - {fileID: 578951682424223810}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &5645558812421323367
 Rigidbody:
@@ -821,7 +821,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6963141711453133783, guid: 4b492aeb32e5e314bb151959dd16bdb4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8838929524904102464, guid: 4b492aeb32e5e314bb151959dd16bdb4, type: 3}
       propertyPath: m_RootOrder
