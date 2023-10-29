@@ -18,8 +18,6 @@ public class EnemyOne : EnemyBase
     public float currentHp; // 새로운 변수 추가
     public bool isDead = false;
     public float pushForce;
-    public Animator monsterAnim;
-    private float rnd;
 
     private void Start()
     {
@@ -123,6 +121,8 @@ public class EnemyOne : EnemyBase
         enemy_HpBar_Back.transform.LookAt(target);
     }
 
+<<<<<<< HEAD
+=======
     public void MonsterRandomAnim()
     {
         if (monsterAnim)
@@ -143,4 +143,5 @@ public class EnemyOne : EnemyBase
         clone.transform.position = transform.position;
         clone.transform.localScale = transform.localScale * 0.85f;
     }
+>>>>>>> 2b22af4e9ba4c5ac4a03c5edaef71308a0741ffc
 }

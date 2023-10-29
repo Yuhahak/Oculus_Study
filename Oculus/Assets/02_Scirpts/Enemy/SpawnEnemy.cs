@@ -29,11 +29,15 @@ public class SpawnEnemy : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(spawnCount);
-
+<<<<<<< HEAD
+            Transform spawnPoint = spawnPos[Random.Range(0, 4)];
+            Transform skySpawnPoint = skySpawnPos[Random.Range(0, 4)];
+=======
             Transform spawnPoint = spawnPos[Random.Range(0, 7)];
             int spawnNum1 = Random.Range(0, 2);
             int spawnNum2 = Random.Range(1, 3);
             int spawnNum3 = Random.Range(0, 4);
+>>>>>>> 2b22af4e9ba4c5ac4a03c5edaef71308a0741ffc
 
             if (timer <= 30)
             {
