@@ -17,16 +17,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance != this && instance != null)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        else
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
+        instance = this;
 
     }
     // Start is called before the first frame update

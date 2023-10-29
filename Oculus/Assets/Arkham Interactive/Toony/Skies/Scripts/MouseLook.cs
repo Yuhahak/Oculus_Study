@@ -18,9 +18,10 @@ public class MouseLook : MonoBehaviour
 		lockCursor = mouseCenteredAndHidden;
 		sensitivityModifier = new Vector3 (horizontalSensitivity, verticalSensitivity);
 	}
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    [System.Obsolete]
+    void Update ()
 	{
 		
 		if (allowEscape && Input.GetKeyDown (KeyCode.Escape))
