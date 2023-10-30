@@ -446,12 +446,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  enemy_Hp: 20
-  enemy_MoveSpeed: 5
+  enemy_Hp: 25
+  enemy_MoveSpeed: 7
   enemy_Damage: 1
+  nav: {fileID: 0}
   target: {fileID: 0}
   enemy_HpBar: {fileID: 6779253756135090741}
   enemy_HpBar_Back: {fileID: 7309301170152057177}
+  currentHp: 0
+  isDead: 0
   pushForce: 40
   monsterAnim: {fileID: 303840641173707778}
   rnd: 0

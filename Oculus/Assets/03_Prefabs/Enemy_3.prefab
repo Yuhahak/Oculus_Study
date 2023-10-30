@@ -478,9 +478,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  enemy_Hp: 20
-  enemy_MoveSpeed: 10
-  enemy_Damage: 1
+  enemy_Hp: 10
+  enemy_MoveSpeed: 15
+  enemy_Damage: 0.5
   nav: {fileID: 0}
   target: {fileID: 0}
   enemy_HpBar: {fileID: 6779253756135090741}
