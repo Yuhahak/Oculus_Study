@@ -30,7 +30,7 @@ public class Stat : MonoBehaviour
 
     public void HpUp()
     {
-        Player.instance.hp += 200f * hpUp;
+        Player.instance.hp += 250f * hpUp;
         Player.instance.maxHp = Player.instance.hp;
     }
 

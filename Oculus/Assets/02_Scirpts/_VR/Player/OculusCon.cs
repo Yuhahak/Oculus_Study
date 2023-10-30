@@ -40,6 +40,7 @@ public class OculusCon : MonoBehaviour
         if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))  //오른손 트리거를 눌렀을 때
         {
             Player.GetComponent<SS_Gun>().FireR();
+            OVRInput.SetControllerVibration(0.5f, 1f, controllerR);
         }
 
         if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))

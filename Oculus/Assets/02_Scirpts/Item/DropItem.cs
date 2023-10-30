@@ -12,6 +12,9 @@ public class DropItem : MonoBehaviour
 
     public static DropItem instance;
 
+    public OVRScreenFade ovrScreenFade;
+
+
     private void Awake()
     {
         instance = this;

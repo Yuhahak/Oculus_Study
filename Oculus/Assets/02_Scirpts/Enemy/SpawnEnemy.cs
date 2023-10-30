@@ -25,6 +25,16 @@ public class SpawnEnemy : MonoBehaviour
         StartCoroutine(TimerCoroution());
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            GameObject newEnemy = Instantiate(enemyList[4], BossPos.position, Quaternion.identity);
+            newEnemy.GetComponent<EnemyOne>().MonsterRandomAnim();
+            newEnemy.transform.SetParent(BossPos);
+            spawnedEnemies.Add(newEnemy);
+        }
+    }
 
     IEnumerator SpawnEnemy_()
     {

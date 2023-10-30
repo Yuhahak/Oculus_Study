@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public Animation anim;
     public static Player instance;
 
 
@@ -32,6 +33,7 @@ public class Player : MonoBehaviour
 
     public void Damaged(float EnemyDamage)
     {
+        anim.Play();
         hp -= EnemyDamage;
         if (hp < 0)
         {

@@ -60,6 +60,7 @@ public class GameManager : MonoBehaviour
     IEnumerator GameOver()
     {
             SS = false;
+        DropItem.instance.ovrScreenFade.FadeIn3();
             Debug.Log("게임오버");
             DataManager.instance.playerData.coin += coin;
             DataManager.instance.SaveData();
