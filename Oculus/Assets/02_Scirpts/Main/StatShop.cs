@@ -181,6 +181,9 @@ public class StatShop : MonoBehaviour
         for (int i = 0; i < statImages.Count; i++)
         {
             statImages[i].sprite = i < count ? ChangeImage : null;
+            Color newColor = statImages[i].color;
+            newColor.a = i < count ? 1.0f : 0.0f; // Set alpha to 1 when enabled, 0 when disabled
+            statImages[i].color = newColor;
         }
     }
 
@@ -189,6 +192,9 @@ public class StatShop : MonoBehaviour
         for (int i = 0; i < statImages.Count; i++)
         {
             statImages[i].sprite = null;
+            Color newColor = statImages[i].color;
+            newColor.a = 0.0f; // Set alpha to 0 to hide the image
+            statImages[i].color = newColor;
         }
     }
 }
