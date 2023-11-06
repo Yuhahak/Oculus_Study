@@ -152,7 +152,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statShop: {fileID: 0}
-  spark: {fileID: 2965222256817593503, guid: 6dbdfc063d44f7e4abf53afdc287874a, type: 3}
 --- !u!1 &7991299539799058641
 GameObject:
   m_ObjectHideFlags: 0
